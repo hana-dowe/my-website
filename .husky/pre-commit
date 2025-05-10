@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run Pre-Commit Checks
+bun lint || (echo "Failed Lint Check" && exit 1)
+bun ts || (echo "Failed TS Check" && exit 1)
+bun format:check || (echo "Failed Format Check" && exit 1)
+
+echo "All Checks Passed"
