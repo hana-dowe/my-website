@@ -1,0 +1,42 @@
+{
+  "name": "hana-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ts": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --list-different .",
+    "all": "bun format && bun lint && bun ts",
+    "prod": "next build && next start",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@types/three": "^0.164.0",
+    "next": "^15.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "three": "^0.164.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "husky": "^9.0.11",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

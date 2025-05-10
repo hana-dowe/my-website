@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: theme('colors.main');
+  background-color: theme('colors.background.DEFAULT');
+}
+
+/*hanatodo add default styles
+
+h1 {
+}
+
+h2 {
+}
+*/
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes m {
+  0% {
+    background-position:
+      -200% 100%,
+      -100% 100%,
+      0% 100%,
+      100% 100%,
+      0% 100%,
+      100% 100%,
+      200% 100%,
+      300% 100%;
+  }
+  100% {
+    background-position:
+      0% 100%,
+      100% 100%,
+      200% 100%,
+      300% 100%,
+      -200% 100%,
+      -100% 100%,
+      0% 100%,
+      100% 100%;
+  }
+}
+@keyframes s {
+  0% {
+    background-size:
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 45%,
+      50.5% 45%,
+      50.5% 45%,
+      50.5% 45%;
+  }
+  33% {
+    background-size:
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 40%,
+      50.5% 45%,
+      50.5% 45%,
+      50.5% 45%,
+      50.5% 45%;
+  }
+  66% {
+    background-size:
+      50.5% 55%,
+      50.5% 55%,
+      50.5% 55%,
+      50.5% 55%,
+      50.5% 50%,
+      50.5% 50%,
+      50.5% 50%,
+      50.5% 50%;
+  }
+  100% {
+    background-size:
+      50.5% 65%,
+      50.5% 65%,
+      50.5% 65%,
+      50.5% 65%,
+      50.5% 70%,
+      50.5% 70%,
+      50.5% 70%,
+      50.5% 70%;
+  }
+}
+
+.flowyHeading {
+  font-size: 3rem;
+  @media screen(md) {
+    font-size: 6vw;
+  }
+  text-align: center;
+}
+.flowyHeading span {
+  display: inline-block;
+  line-height: 1;
+
+  transition: 0.1s ease-in-out;
+
+  --c1: theme('colors.lightblue');
+  --c2: theme('colors.orange');
+  --c3: theme('colors.beige');
+
+  --_p: 153% 68.5% at;
+  --_g1: radial-gradient(var(--_p) top, #0000 79.5%, var(--c1) 80%) no-repeat;
+  --_g2: radial-gradient(var(--_p) bottom, var(--c1) 79.5%, #0000 80%) no-repeat;
+  --_g3: radial-gradient(var(--_p) top, #0000 79.5%, var(--c2) 80%) no-repeat;
+  --_g4: radial-gradient(var(--_p) bottom, var(--c2) 79.5%, #0000 80%) no-repeat;
+  background: var(--_g1), var(--_g2), var(--_g1), var(--_g2), var(--_g3), var(--_g4), var(--_g3),
+    var(--_g4), var(--c3);
+  background-clip: text;
+  color: #0000;
+  box-decoration-break: clone;
+  animation:
+    s 2s infinite alternate,
+    m 3s infinite linear;
+}
+.flowyHeading:hover span:hover {
+  @media screen(md) {
+    /* transform: scale(1.02); */
+    --c2: theme('colors.pink');
+  }
+}
+
+.flowyHeaderTop {
+  transition: 400ms ease-in-out;
+  animation-delay: 500ms;
+
+  --c2: theme('colors.lightblue');
+
+  --_p: 93% 83.5% at;
+  --_g3: radial-gradient(var(--_p) top, #0000 79.5%, var(--c2) 80%) no-repeat;
+  --_g4: radial-gradient(var(--_p) bottom, var(--c2) 79.5%, #0000 80%) no-repeat;
+  background: var(--_g3), var(--_g4), var(--_g3), var(--_g4);
+  box-decoration-break: clone;
+
+  animation:
+    s 8s infinite alternate,
+    m 12s infinite linear;
+}
+.flowyHeaderBottom {
+  transition: 400ms ease-in-out;
+  animation-delay: 0ms;
+
+  --c1: theme('colors.background.DEFAULT');
+
+  --_p: 93% 83.5% at;
+  --_g1: radial-gradient(var(--_p) top, #0000 79.5%, var(--c1) 80%) no-repeat;
+  --_g2: radial-gradient(var(--_p) bottom, var(--c1) 79.5%, #0000 80%) no-repeat;
+  background: var(--_g1), var(--_g2), var(--_g1), var(--_g2);
+  box-decoration-break: clone;
+
+  animation:
+    s 8s infinite alternate,
+    m 12s infinite linear;
+}
+
+@layer utilities {
+  .flowyBox {
+    transition: 400ms ease-in-out;
+    animation-delay: 500ms;
+
+    --c1: theme('colors.lightblue');
+    --c2: theme('colors.orange');
+    --c3: theme('colors.beige');
+
+    --_p: 93% 83.5% at;
+    --_g1: radial-gradient(var(--_p) top, #0000 79.5%, var(--c1) 80%) no-repeat;
+    --_g2: radial-gradient(var(--_p) bottom, var(--c1) 79.5%, #0000 80%) no-repeat;
+    --_g3: radial-gradient(var(--_p) top, #0000 79.5%, var(--c2) 80%) no-repeat;
+    --_g4: radial-gradient(var(--_p) bottom, var(--c2) 79.5%, #0000 80%) no-repeat;
+    background: var(--_g1), var(--_g2), var(--_g1), var(--_g2), var(--_g3), var(--_g4), var(--_g3),
+      var(--_g4), var(--c3);
+    color: #0000;
+    box-decoration-break: clone;
+
+    animation:
+      s 2s infinite alternate,
+      m 3s infinite linear;
+
+    animation-play-state: paused;
+  }
+  .flowyBox-active {
+    scale: 1.02;
+    animation-play-state: running;
+    --c2: theme('colors.pink');
+  }
+
+  .animatedUnderline {
+    background: linear-gradient(to right, theme('colors.lightblue'), theme('colors.lightblue'));
+    background-size: 0 0.2em;
+    background-position: 0 85%;
+    background-repeat: no-repeat;
+    transition: background-position 400ms;
+    /* hanatodo or just 400ms (should change wavy thing to gradually change color if none) */
+  }
+  .animatedUnderline-active {
+    background-size: calc(100% - 0.75ex) 0.4em;
+    background-position: 110% 85%;
+  }
+
+  .customScrollbar {
+    /* scrollbar-color: beige transparent; */
+    scrollbar-width: none;
+  }
+
+  .projectIcon {
+    aspect-ratio: 1;
+    object-fit: scale-down;
+    padding: 0.5rem;
+    contain: size;
+    height: auto;
+    user-select: none;
+    width: 100%;
+    filter: drop-shadow(0.25rem 0.25rem theme('colors.background.dark'));
+  }
+
+  .tape {
+    background-color: hsla(0, 0%, 100%, 0.2);
+    box-shadow: inset 0 0 1em 0.5em hsla(0, 0%, 100%, 0.1);
+  }
+  .tape:after,
+  .tape:before {
+    background-size: 0.4em 0.4em;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0.2em;
+  }
+  .tape:after {
+    background-image: linear-gradient(45deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%),
+      linear-gradient(-45deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%);
+    background-position: 0 100%;
+    left: -0.2em;
+  }
+  .tape:before {
+    background-image: linear-gradient(135deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%),
+      linear-gradient(-135deg, transparent 50%, hsla(0, 0%, 100%, 0.3) 50%);
+    background-position: 100% 100%;
+    right: -0.2em;
+  }
+}

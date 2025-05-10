@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   viewBox="0 0 120.67643 128.5"
+   width="120.67644"
+   height="128.5"
+   id="svg1"
+   sodipodi:docname="logo-NoOutline.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1" />
+  <title
+     id="title1">logo-NoOutline</title>
+  <style
+     id="style1">
+		.s0 { fill: #ffb04d } 
+	</style>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>logo-NoOutline</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     sodipodi:type="star"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+     id="path2"
+     inkscape:flatsided="true"
+     sodipodi:sides="3"
+     sodipodi:cx="47.702297"
+     sodipodi:cy="37.016983"
+     sodipodi:r1="34.72937"
+     sodipodi:r2="17.364685"
+     sodipodi:arg1="-1.5817849"
+     sodipodi:arg2="-0.53458734"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="M 47.320679,2.2897097 77.967807,54.050128 17.818406,54.711111 Z"
+     inkscape:transform-center-x="-0.21865318"
+     inkscape:transform-center-y="-12.050521"
+     transform="matrix(1.1459237,0,0,1.4149498,-3.08764,38.632303)" />
+  <path
+     class="s0"
+     d="m 112.2,116.7 q -0.2,-0.5 -0.5,-1.1 -0.2,-0.5 -0.5,-1 -0.2,-0.5 -0.5,-1 c -1.2,-2.2 -2.8,-5.2 -4.6,-9.4 L 65.7,10 C 64.8,7.8 63.8,6 61.4,6 Q 60.6,6 59.8,6.2 59,6.5 58.3,6.9 57.6,7.4 57.1,8 56.6,8.6 56.3,9.4 l -45.5,99.8 q -0.4,0.7 -0.8,1.4 -0.3,0.8 -0.7,1.5 -0.4,0.7 -0.9,1.4 -0.4,0.7 -0.8,1.4 c -1,1.6 -1.6,2.6 -1.6,3.4 0,3.7 2.9,4.2 5,4.2 1.1,0 3.8,-0.1 7.5,-0.3 9,-0.3 24,-0.9 38,-0.9 13.9,0 28.2,0.5 38.6,0.8 6.1,0.2 10.9,0.4 13.8,0.4 h 0.2 0.8 q 1.1,-0.1 3.1,-0.2 c 4,-0.2 -0.7,-5.2 -0.8,-5.6 z M 72,112.5 H 28.2 q -0.3,0 -0.7,0 -0.3,0 -0.7,-0.1 -0.3,0 -0.7,-0.1 -0.3,0 -0.7,-0.1 l -0.1,-0.1 q -0.6,-0.1 -1,-0.4 -0.5,-0.3 -0.8,-0.8 -0.3,-0.4 -0.5,-0.9 -0.2,-0.5 -0.2,-1.1 0,0 0,-0.1 0,0 0,-0.1 0.1,0 0.1,-0.1 0,0 0,-0.1 c 0.3,-2.1 1.9,-5.7 2.7,-7.7 1.4,-3.2 6.3,-14.9 11.2,-26.4 4.9,-11.5 9.7,-22.9 10.9,-25.6 1,-2.5 1.4,-3.4 2.5,-3.4 0.4,0 0.7,0.4 1.1,1.1 0.4,0.6 0.7,1.4 1.2,2.4 l 1.1,2.5 2.7,6.1 c 2.1,5.5 20.3,46.3 21.1,51.1 0.5,2.8 -1.6,4 -5.4,4"
+     id="path1"
+     style="stroke:#ffffff;stroke-width:12;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" />
+</svg>
