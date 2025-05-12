@@ -1,12 +1,20 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
+//const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  assetPrefix: isProd ? '/my-website/' : '',
-  basePath: isProd ? '/my-website' : '',
+
+  // for deploying on github pages
+  // assetPrefix: isProd ? '/my-website/' : '',
+  // basePath: isProd ? '/my-website' : '',
+  // and change url to "https://hana-dowe.github.io/my-website" in package.json
+
+  // for deploying on own domain
+  assetPrefix: '',
+  basePath: '',
+
   output: 'export',
   async headers() {
     return [

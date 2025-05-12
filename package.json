@@ -1,7 +1,7 @@
 {
   "name": "hana-website",
   "version": "0.1.0",
-  "homepage": "https://hana-dowe.github.io/my-website",
+  "homepage": "https://hanadowe.com",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",

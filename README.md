@@ -43,7 +43,7 @@ Check linting/TS/Format: `bun dev`
 - https://www.namecheap.com/
 - https://domains.squarespace.com/
 
-- steps: https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/
+- steps: https://dev.to/daviidy/6-steps-to-deploy-your-react-nextjs-app-with-github-pages-33ck
 
 # utilize next project/folder structure
 
