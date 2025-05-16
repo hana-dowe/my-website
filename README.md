@@ -35,14 +35,6 @@ Check linting/TS/Format: `bun dev`
 
 ## Notes (Hanatodo)
 
-# use github pages to host?
-
-- add custom domain in user account settings
-
-- places to get domain:
-- https://www.namecheap.com/
-- https://domains.squarespace.com/
-
 - steps: https://dev.to/daviidy/6-steps-to-deploy-your-react-nextjs-app-with-github-pages-33ck
 
 # utilize next project/folder structure

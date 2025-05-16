@@ -12,14 +12,14 @@ import Polaroid from '@/app/components/polaroid'
 import { Project } from '@/app/types/types'
 import alida from '@/public/alida/alida-NoOutline.png'
 import alidaLogo from '@/public/alida/logo.svg'
-import deerhacksLogo from '@/public/deerhacks/logo.svg'
+import deerhacksLogo from '@/public/deerhacks/logo.png'
 import deerhacksLandingPage from '@/public/deerhacks/MNBuilding.png'
 import pigeonBread from '@/public/pigeons/PigeonBread.png'
 import pigeonSelfie from '@/public/pigeons/pigeonSelfie.png'
 import skippyLogo from '@/public/skippy/Skippy.png'
 import skippyPlaying from '@/public/skippy/SkippyPlaying.png'
 import spellWellLandingPage from '@/public/spellwell/landingPage.png'
-import spellWellLogo from '@/public/spellwell/wizard.svg'
+import spellWellLogo from '@/public/spellwell/wizard.png'
 
 const mali = Mali({
   weight: ['600', '700'],
@@ -79,16 +79,16 @@ const shuffle = (array: Project[]) => {
 export default function Home() {
   // hanatodo shake logos on first render (shake every couple seconds?? or on hover)
   // hanatodo random size project icons on lg size screen
-  // hanatodo small screen home page looks ugly
+  // hanatodo figure out icon layout for mobile landing page
 
   let shuffled_icons = shuffle(projects)
 
   return (
     <main>
       <div className="flex w-full flex-col gap-32">
-        <div className="flex flex-col my-auto gap-y-2 max-w-full m-auto pb-8 self-center w-fit items-center min-h-[calc(100vh-8rem)] justify-center">
+        <div className="flex flex-col my-auto gap-y-2 max-w-full m-auto sm:pb-8 self-center w-fit items-center sm:min-h-[calc(100dvh-8rem)] justify-center">
           <div className="flex flex-row w-full justify-between lg:w-[110%] relative items-start">
-            <div className="w-0 sm:w-1/2 lg:w-1/3 flex flex-row">
+            <div className="hidden w-1/2 lg:w-1/3 sm:flex flex-row">
               <FloatingProjectIcon
                 {...shuffled_icons[0]}
                 className="rotate-3 translate-y-16 md:translate-x-[-3vw]"
@@ -99,7 +99,7 @@ export default function Home() {
               />
             </div>
             <MyFace className="hidden lg:flex w-48 left-0 right-0 m-auto" />
-            <div className="w-0 sm:w-1/2 lg:w-1/3 flex flex-row justify-end">
+            <div className="hidden sm:w-1/2 lg:w-1/3 sm:flex flex-row justify-end">
               <FloatingProjectIcon
                 {...shuffled_icons[2]}
                 className="-rotate-6  md:translate-x-[2vw]"
@@ -127,7 +127,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row align-middle justify-center gap-4 self-center min-w-[30%] w-full lg:w-2/3 pb-16 min-h-36 lg:pt-4">
+            <div className="flex flex-col lg:flex-row align-middle justify-center gap-4 self-center min-w-[30%] w-full lg:w-2/3 sm:pb-16 min-h-36 lg:pt-4">
               <Button href="#about" fullWidth>
                 About
               </Button>
@@ -137,28 +137,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex sm:hidden items-center w-full justify-between">
-            <FloatingProjectIcon
-              {...shuffled_icons[3]}
-              className="-rotate-12 translate-y-2 lg:-translate-y-24 md:translate-x-[-2vw] lg:translate-x-[-3vw]"
-            />
-            <FloatingProjectIcon
-              {...shuffled_icons[4]}
-              className="rotate-6 -translate-y-2 lg:-translate-y-0 md:translate-x-[-1vw] lg:translate-x-[-4vw]"
-            />
-            <FloatingProjectIcon
-              {...shuffled_icons[2]}
-              className="-rotate-12 translate-y-2 lg:-translate-y-4 md:translate-x-[-1vw] lg:translate-x-[1vw]"
-            />
-            <FloatingProjectIcon
-              {...shuffled_icons[1]}
-              className="rotate-6 translate-y-2 lg:-translate-y-0 md:translate-x-[1vw] lg:translate-x-[-1vw]"
-            />
-            <FloatingProjectIcon
-              {...shuffled_icons[0]}
-              className="rotate-12 -translate-y-2 lg:-translate-y-20 md:translate-x-[2vw] lg:translate-x-[3vw]"
-            />
-          </div>
           <div className=" hidden sm:flex flex-col sm:flex-row items-center w-full justify-between lg:w-[110%]">
             <div className="w-full sm:w-1/2 lg:w-1/3 flex flex-row">
               <FloatingProjectIcon
@@ -189,6 +167,29 @@ export default function Home() {
               />
             </div>
           </div>
+        </div>
+
+        <div className="flex sm:hidden items-center w-full justify-between">
+          <FloatingProjectIcon
+            {...shuffled_icons[3]}
+            className="-rotate-12 translate-y-2 lg:-translate-y-24 md:translate-x-[-2vw] lg:translate-x-[-3vw]"
+          />
+          <FloatingProjectIcon
+            {...shuffled_icons[4]}
+            className="rotate-6 -translate-y-2 lg:-translate-y-0 md:translate-x-[-1vw] lg:translate-x-[-4vw]"
+          />
+          <FloatingProjectIcon
+            {...shuffled_icons[2]}
+            className="-rotate-12 translate-y-2 lg:-translate-y-4 md:translate-x-[-1vw] lg:translate-x-[1vw]"
+          />
+          <FloatingProjectIcon
+            {...shuffled_icons[1]}
+            className="rotate-6 translate-y-2 lg:-translate-y-0 md:translate-x-[1vw] lg:translate-x-[-1vw]"
+          />
+          <FloatingProjectIcon
+            {...shuffled_icons[0]}
+            className="rotate-12 -translate-y-2 lg:-translate-y-20 md:translate-x-[2vw] lg:translate-x-[3vw]"
+          />
         </div>
 
         <div
@@ -282,13 +283,6 @@ export default function Home() {
             })}
           </div>
         </div>
-      </div>
-
-      <div className="w-full flex flex-col items-center mb-8 mt-8 md:mt-0">
-        <MyFace outline className="w-28" />
-        <h1 key={0} className="text-beige">
-          <span className={mali.className}>© Hana Dowe</span>
-        </h1>
       </div>
     </main>
   )

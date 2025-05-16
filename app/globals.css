@@ -209,13 +209,13 @@ h2 {
   }
 
   .customScrollbar {
-    /* scrollbar-color: beige transparent; */
+    /* scrollbar-color: theme('colors.beige') transparent; hanatodo */
     scrollbar-width: none;
   }
 
   .projectIcon {
     aspect-ratio: 1;
-    object-fit: scale-down;
+    object-fit: contain;
     padding: 0.5rem;
     contain: size;
     height: auto;

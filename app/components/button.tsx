@@ -12,10 +12,10 @@ const Button = (props: Props) => {
     <a
       href={href}
       {...(newTab && { target: '_blank' })}
-      className={`min-h-16 max-h-16 group ${fullWidth && 'w-full'}`}
+      className={`group ${fullWidth && 'w-full'}`}
     >
       <div
-        className="rounded-md w-full h-full p-1 bg-background text-beige border-beige border-solid border-2 
+        className="rounded-md w-full h-16 p-1 bg-background text-beige border-beige border-solid border-2 
       flex flex-row justify-between text-lg font-bold items-center text-center shadow-[0rem_0.25rem] shadow-beige group-hover:translate-y-1 group-hover:shadow-[0rem_0.1rem]"
       >
         <div className="px-4 w-full h-full rounded-sm content-center group-hover:bg-beige group-hover:text-background group-hover:border-background">

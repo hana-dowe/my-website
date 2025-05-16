@@ -12,8 +12,8 @@ const FloatingProjectIcon = (props: Props) => {
   const { className, href, logoSrc, name } = props
 
   return (
-    <a href={href} className="w-1/3 h-full hover:scale-105" target="_blank">
-      <Image className={`projectIcon ${className}`} src={logoSrc} alt={name + ' Logo'} />
+    <a href={href} className={`w-1/3 h-full hover:scale-105 ${className}`} target="_blank">
+      <Image className="projectIcon" src={logoSrc} alt={name + ' Logo'} />
     </a>
   )
 }
