@@ -14,6 +14,8 @@ import alida from '@/public/alida/alida-NoOutline.png'
 import alidaLogo from '@/public/alida/logo.svg'
 import deerhacksLogo from '@/public/deerhacks/logo.png'
 import deerhacksLandingPage from '@/public/deerhacks/MNBuilding.png'
+import luka from '@/public/magenetra/channelBanner.png'
+import lyricalTranslationIcon from '@/public/magenetra/lyricalTranslation.png'
 import pigeonBread from '@/public/pigeons/PigeonBread.png'
 import pigeonSelfie from '@/public/pigeons/pigeonSelfie.png'
 import skippyLogo from '@/public/skippy/Skippy.png'
@@ -30,11 +32,11 @@ const mali = Mali({
 
 let projects: Project[] = [
   {
-    name: 'Alida',
-    logoSrc: alidaLogo,
-    polaroidSrc: alida,
-    polaroidAlt: 'Alida Dashboard',
-    href: 'https://www.alida.com/touchpoint',
+    name: "Pigeons Aren't Real",
+    logoSrc: pigeonBread,
+    polaroidSrc: pigeonSelfie,
+    polaroidAlt: 'Pigeon Selfie',
+    href: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM', // hanatodo
   },
   {
     name: 'DeerHacks',
@@ -51,11 +53,11 @@ let projects: Project[] = [
     href: 'https://studioberry.itch.io/skippy-the-swimmer',
   },
   {
-    name: "Pigeons Aren't Real",
-    logoSrc: pigeonBread,
-    polaroidSrc: pigeonSelfie,
-    polaroidAlt: 'Pigeon Selfie',
-    href: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM', // hanatodo
+    name: 'Alida',
+    logoSrc: alidaLogo,
+    polaroidSrc: alida,
+    polaroidAlt: 'Alida Dashboard',
+    href: 'https://www.alida.com/touchpoint',
   },
   {
     name: 'Spell Well',
@@ -64,6 +66,14 @@ let projects: Project[] = [
     polaroidAlt: 'Spell Well Landing Page',
     href: 'https://hana-dowe.github.io/SpellWell/',
   },
+  {
+    name: 'Magenetra',
+    logoSrc: lyricalTranslationIcon, // hanatodo make icon color of sky?
+    polaroidSrc: luka,
+    polaroidAlt: 'Magenetra Icon',
+    href: 'https://youtube.com/@magenetra?si=IJxbSpzVaBOS-iBU',
+  },
+  // don't use svg as logo, because it gets squished on mobile
 ]
 
 // https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
@@ -116,10 +126,7 @@ export default function Home() {
               <MyFace className="flex lg:hidden w-48" />
               <div className="my-auto text-wrap justify-items-center">
                 <h1 className={`${mali.className} flowyHeading text-balance`}>
-                  <span>Hana</span>
-                  &nbsp;
-                  {/*doesn't align to middle because of space on super small screens but no one has a phone that small anymore so screw that*/}
-                  <span>Dowe</span>
+                  <span>Hana Dowe</span>
                 </h1>
                 <p className="text-xl md:text-[2vw] text-center text-pretty text-beige lg:ml-4">
                   A Software Developer with a passion for UX design
@@ -158,7 +165,7 @@ export default function Home() {
                 className="-rotate-6 -translate-y-2 lg:-translate-y-4 md:translate-x-[1vw] lg:translate-x-[-1vw]"
               />
               <FloatingProjectIcon
-                {...shuffled_icons[4]}
+                {...shuffled_icons[5]}
                 className="rotate-6 translate-y-2 lg:-translate-y-0 md:translate-x-[1vw] lg:translate-x-[-1vw]"
               />
               <FloatingProjectIcon
@@ -181,14 +188,6 @@ export default function Home() {
           <FloatingProjectIcon
             {...shuffled_icons[2]}
             className="-rotate-12 translate-y-2 lg:-translate-y-4 md:translate-x-[-1vw] lg:translate-x-[1vw]"
-          />
-          <FloatingProjectIcon
-            {...shuffled_icons[1]}
-            className="rotate-6 translate-y-2 lg:-translate-y-0 md:translate-x-[1vw] lg:translate-x-[-1vw]"
-          />
-          <FloatingProjectIcon
-            {...shuffled_icons[0]}
-            className="rotate-12 -translate-y-2 lg:-translate-y-20 md:translate-x-[2vw] lg:translate-x-[3vw]"
           />
         </div>
 
@@ -257,11 +256,11 @@ export default function Home() {
 
         <div
           id="projects"
-          className="flex w-full flex-col items-center gap-24 px-8 sm:px-24 md:px-8 mb-24 sm:mb-0"
+          className="flex w-full flex-col items-center gap-24 px-8 sm:px-24 md:px-8"
         >
           <div
             className={
-              `grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl ${projects.length % 2 == 0 && '-mb-64'}`
+              `grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl ${projects.length % 2 == 0 && 'sm:-mb-64'}`
               // hanatodo sizing works but covers stuff under it, and makes it not clickable if theres an even number of projects
             }
           >
