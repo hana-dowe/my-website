@@ -2,6 +2,7 @@
 import { useState } from 'react'
 
 import GithubIcon from '@/app/components/icons/githubIcon'
+import HomeIcon from '@/app/components/icons/homeIcon'
 import LinkedInIcon from '@/app/components/icons/linkedInIcon'
 import MailIcon from '@/app/components/icons/mailIcon'
 import MenuIcon from '@/app/components/icons/menuIcon'
@@ -9,20 +10,32 @@ import MenuIcon from '@/app/components/icons/menuIcon'
 const NavMenu = () => {
   var [navOpen, setNavOpen] = useState(false)
   return (
-    <>
+    <div className="flex justify-between absolute w-[calc(100%-8px)] z-30">
+      <div className="pl-3 pt-3 w-fit">
+        <a href="#home" className="text-beige group hidden sm:block">
+          <HomeIcon className="group-hover:scale-110 h-8 box-content p-3" />
+        </a>
+      </div>
       <div className="rounded-bl-[24px] border-beige border-l-2 border-b-2 pb-2 pl-2 z-50">
         <div
           suppressHydrationWarning
           className={`grid bg-beige rounded-bl-[16px] text-mainDark font-bold gap-6 ${navOpen && 'py-5 px-8'}`}
         >
-          <button
-            className={`group w-fit justify-self-end ${!navOpen && 'py-5 px-8'}`}
-            onClick={() => setNavOpen(!navOpen)}
-          >
-            <h2 className={'h-6 group-hover:scale-110 w-fit'}>
-              <MenuIcon />
-            </h2>
-          </button>
+          <div className="flex justify-between">
+            <div className={`${!navOpen && 'hidden'}`}>
+              <a href="#home" onClick={() => setNavOpen(false)} className="group">
+                <HomeIcon className="group-hover:scale-110 h-full box-content" />
+              </a>
+            </div>
+            <button
+              className={`group w-fit justify-self-end ${!navOpen && 'py-5 px-8'}`}
+              onClick={() => setNavOpen(!navOpen)}
+            >
+              <h2 className={'h-6 group-hover:scale-110 w-fit'}>
+                <MenuIcon />
+              </h2>
+            </button>
+          </div>
           <div className={`${navOpen ? 'grid' : 'hidden'} gap-4 text-xl`}>
             <a href="#about" onClick={() => setNavOpen(false)} className="group">
               <h2 className="animatedUnderline group-hover:animatedUnderline-active group-hover:scale-105">
@@ -58,7 +71,7 @@ const NavMenu = () => {
         className={`${navOpen ? 'fixed' : 'hidden'} h-full w-full bg-background opacity-50 z-40 rounded-[20px]`}
         onClick={() => setNavOpen(false)}
       />
-    </>
+    </div>
   )
 }
 
