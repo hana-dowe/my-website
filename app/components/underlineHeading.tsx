@@ -10,7 +10,7 @@ const UnderlineHeading = (props: Props) => {
     // hanatodo group-hover here is weird
     <>
       <h2
-        className={`font-semibold mb-4 animatedUnderline group-hover:animatedUnderline-active ${className}`}
+        className={`font-bold mb-4 animatedUnderline group-hover:animatedUnderline-active ${className}`}
       >
         {children}
       </h2>

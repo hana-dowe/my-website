@@ -30,13 +30,13 @@ const Polaroid = (props: Props) => {
         >
           <div className="aspect-square overflow-clip ">
             <Image
-              className="bg-black w-full h-full object-cover md:saturate-0 group-hover:saturate-100 group-hover:scale-105 transition-all duration-200"
+              className="bg-black w-full h-full object-cover group-hover:scale-105 transition-all duration-200"
               src={photoSrc}
               alt={photoAlt}
             />
           </div>
-          <div className="text-center mx-[15%] mt-4">
-            <UnderlineHeading className="text-mainDark group-hover:font-bold text-xl lg:text-3xl inline">
+          <div className="text-center mx-[calc(33.333%_-_2rem)] mt-4">
+            <UnderlineHeading className="text-mainDark text-xl lg:text-3xl inline">
               {description}
             </UnderlineHeading>
           </div>
@@ -45,7 +45,7 @@ const Polaroid = (props: Props) => {
       </div>
       <Image
         className={`projectIcon absolute bottom-4 !w-1/3
-          ${variant == 'left' ? '-left-8 -rotate-3 group-hover:-rotate-12 group-hover:-left-10' : '-right-8 rotate-6 group-hover:rotate-12 group-hover:-right-10'}`}
+              ${variant == 'left' ? '-left-8 -rotate-3 group-hover:-rotate-12 group-hover:-left-10' : '-right-8 rotate-6 group-hover:rotate-12 group-hover:-right-10'}`}
         src={badgeSrc}
         alt={description + ' logo'}
       />
