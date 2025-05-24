@@ -45,25 +45,13 @@ export default function Home() {
         <div className="flex flex-col my-auto gap-y-2 max-w-full m-auto sm:pb-8 self-center w-fit items-center sm:min-h-[calc(100dvh-8rem)] justify-center">
           <div className="flex flex-row w-full justify-between lg:w-[110%] relative items-start">
             <div className="hidden w-1/2 lg:w-1/3 sm:flex flex-row">
-              <FloatingProjectIcon
-                {...shuffled_icons[0]}
-                className="rotate-3 translate-y-16 md:translate-x-[-3vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[1]}
-                className="rotate-3 md:translate-x-[-2vw]"
-              />
+              <FloatingProjectIcon {...shuffled_icons[0]} location="top-left-0" />
+              <FloatingProjectIcon {...shuffled_icons[1]} location="top-left-1" />
             </div>
             <MyFace className="hidden lg:flex w-48 left-0 right-0 m-auto" />
             <div className="hidden sm:w-1/2 lg:w-1/3 sm:flex flex-row justify-end">
-              <FloatingProjectIcon
-                {...shuffled_icons[2]}
-                className="-rotate-6  md:translate-x-[2vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[3]}
-                className="rotate-12 translate-y-16 md:translate-x-[2vw]"
-              />
+              <FloatingProjectIcon {...shuffled_icons[2]} location="top-right-0" />
+              <FloatingProjectIcon {...shuffled_icons[3]} location="top-right-1" />
             </div>
           </div>
 
@@ -92,49 +80,24 @@ export default function Home() {
 
           <div className=" hidden sm:flex flex-col sm:flex-row items-center w-full justify-between lg:w-[110%]">
             <div className="w-full sm:w-1/2 lg:w-1/3 flex flex-row">
-              <FloatingProjectIcon
-                {...shuffled_icons[3]}
-                className="-rotate-12 translate-y-2 lg:-translate-y-24 md:translate-x-[-2vw] lg:translate-x-[-3vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[4]}
-                className="rotate-6 -translate-y-2 lg:-translate-y-0 md:translate-x-[-1vw] lg:translate-x-[-4vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[2]}
-                className="-rotate-12 translate-y-2 lg:-translate-y-4 md:translate-x-[-1vw] lg:translate-x-[1vw]"
-              />
+              <FloatingProjectIcon {...shuffled_icons[3]} location="bottom-left-0" />
+              <FloatingProjectIcon {...shuffled_icons[4]} location="bottom-left-1" />
+              <FloatingProjectIcon {...shuffled_icons[2]} location="bottom-left-2" />
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/3 flex flex-row justify-end">
-              <FloatingProjectIcon
-                {...shuffled_icons[1]}
-                className="-rotate-6 -translate-y-2 lg:-translate-y-4 md:translate-x-[1vw] lg:translate-x-[-1vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[5]}
-                className="rotate-6 translate-y-2 lg:-translate-y-0 md:translate-x-[1vw] lg:translate-x-[-1vw]"
-              />
-              <FloatingProjectIcon
-                {...shuffled_icons[0]}
-                className="rotate-12 -translate-y-2 lg:-translate-y-20 md:translate-x-[2vw] lg:translate-x-[3vw]"
-              />
+              <FloatingProjectIcon {...shuffled_icons[1]} location="bottom-right-0" />
+              <FloatingProjectIcon {...shuffled_icons[5]} location="bottom-right-1" />
+              <FloatingProjectIcon {...shuffled_icons[0]} location="bottom-right-2" />
             </div>
           </div>
         </div>
 
         <div className="flex sm:hidden items-center w-full justify-between">
-          <FloatingProjectIcon
-            {...shuffled_icons[3]}
-            className="-rotate-12 translate-y-2 lg:-translate-y-24 md:translate-x-[-2vw] lg:translate-x-[-3vw]"
-          />
-          <FloatingProjectIcon
-            {...shuffled_icons[4]}
-            className="rotate-6 -translate-y-2 lg:-translate-y-0 md:translate-x-[-1vw] lg:translate-x-[-4vw]"
-          />
-          <FloatingProjectIcon
-            {...shuffled_icons[2]}
-            className="-rotate-12 translate-y-2 lg:-translate-y-4 md:translate-x-[-1vw] lg:translate-x-[1vw]"
-          />
+          <FloatingProjectIcon {...shuffled_icons[0]} location="bottom-even" />
+          <FloatingProjectIcon {...shuffled_icons[1]} location="bottom-odd" />
+          <FloatingProjectIcon {...shuffled_icons[2]} location="bottom-even" />
+          <FloatingProjectIcon {...shuffled_icons[3]} location="bottom-odd" />
+          <FloatingProjectIcon {...shuffled_icons[4]} location="bottom-even" />
         </div>
 
         <div
