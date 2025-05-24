@@ -4,15 +4,13 @@ import { Project } from '@/app/types/types'
 
 type Props = {
   className?: React.ComponentProps<'div'>['className']
-} & Pick<Project, 'href' | 'logoSrc' | 'name'>
-
-//hanatodo remove target blank once theres a page for each project
+} & Pick<Project, 'id' | 'logoSrc' | 'name'>
 
 const FloatingProjectIcon = (props: Props) => {
-  const { className, href, logoSrc, name } = props
+  const { className, id, logoSrc, name } = props
 
   return (
-    <a href={href} className={`w-1/3 h-full hover:scale-105 ${className}`} target="_blank">
+    <a href={'#' + id} className={`w-1/3 h-full hover:scale-105 ${className}`}>
       <Image className="projectIcon" src={logoSrc} alt={name + ' Logo'} />
     </a>
   )
