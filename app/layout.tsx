@@ -50,7 +50,7 @@ export default function RootLayout({
 
             <div className="flex flex-col items-center py-8">
               <div className="flex flex-row gap-6 justify-center py-8">
-                <IconButton href="mailto:han_d87@outlook.com">
+                <IconButton href="mailto:hanadowe@gmail.com">
                   <MailIcon />
                 </IconButton>
                 <IconButton href="https://www.linkedin.com/in/hanadowe/" newTab>

@@ -165,7 +165,7 @@ export default function Home() {
             <br />
             <br />
             <div className="flex flex-row gap-6 my-4 mt-auto">
-              <IconButton href="mailto:han_d87@outlook.com">
+              <IconButton href="mailto:hanadowe@gmail.com">
                 <MailIcon />
               </IconButton>
               <IconButton href="https://www.linkedin.com/in/hanadowe/" newTab>

@@ -54,7 +54,7 @@ const NavMenu = () => {
             </a>
           </div>
           <div className={`${navOpen ? 'flex' : 'hidden'} flex-row gap-6`}>
-            <a href="mailto:han_d87@outlook.com" className="group">
+            <a href="mailto:hanadowe@gmail.com" className="group">
               <h2 className="h-8 group-hover:scale-110">
                 <MailIcon />
               </h2>
