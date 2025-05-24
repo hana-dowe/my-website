@@ -9,8 +9,13 @@ import MenuIcon from '@/app/components/icons/menuIcon'
 
 const NavMenu = () => {
   var [navOpen, setNavOpen] = useState(false)
+
+  // hanatodo change nav menu based on current page if I add multiple pages (need to change anyways for not found pages)
+  // chack if the current page is the home page, if not hide menu and only show home icon? or change link in menu to go home and to correct position
+  // hanatodo add 404 / error pages with button to go back to home page
+
   return (
-    <div className="flex justify-between absolute w-[calc(100%-8px)] z-30">
+    <div className="flex justify-between absolute w-[calc(100%-8px)]">
       <div className="pl-3 pt-3 w-fit">
         <a href="#home" className="text-beige group hidden sm:block">
           <HomeIcon className="group-hover:scale-110 h-8 box-content p-3" />

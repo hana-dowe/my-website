@@ -1,14 +1,15 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import UnderlineHeading from '@/app/components/underlineHeading'
 
 type Props = {
+  id: string
+  name: string
   photoSrc: string | StaticImport
   photoAlt: string
   badgeSrc: string | StaticImport
-  description: string
-  href: string
   variant?: 'left' | 'right'
 }
 
@@ -16,12 +17,13 @@ type Props = {
 // hanatodo do i need tape? replace with pin?
 
 const Polaroid = (props: Props) => {
-  const { photoSrc, photoAlt, badgeSrc, description, href, variant = 'left' } = props
+  const { id, name, photoSrc, photoAlt, badgeSrc, variant = 'left' } = props
   return (
-    <a
+    <Link
+      id={id}
       className={`relative group h-fit ${variant == 'left' && 'md:-translate-y-64'}`}
-      href={href}
-      target="_blank" // hanatodo only for now while there's no project pages
+      href={`/?project=${id}`}
+      scroll={false}
     >
       <div className={`relative my-8 mx-4 ${variant == 'left' ? 'rotate-2' : '-rotate-2 '}`}>
         <div
@@ -37,7 +39,7 @@ const Polaroid = (props: Props) => {
           </div>
           <div className="text-center mx-[calc(33.333%_-_2rem)] mt-4">
             <UnderlineHeading className="text-mainDark text-xl lg:text-3xl inline">
-              {description}
+              {name}
             </UnderlineHeading>
           </div>
         </div>
@@ -47,9 +49,9 @@ const Polaroid = (props: Props) => {
         className={`projectIcon absolute bottom-4 !w-1/3
               ${variant == 'left' ? '-left-8 -rotate-3 group-hover:-rotate-12 group-hover:-left-10' : '-right-8 rotate-6 group-hover:rotate-12 group-hover:-right-10'}`}
         src={badgeSrc}
-        alt={description + ' logo'}
+        alt={name + ' logo'}
       />
-    </a>
+    </Link>
   )
 }
 

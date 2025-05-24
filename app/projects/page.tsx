@@ -7,11 +7,13 @@ const mali = Mali({
   display: 'swap',
 })
 
+//hanatodo delete later
+
 export default function Home() {
   return (
     <main className="flex w-full flex-col items-center gap-24 p-24">
       <h1 className="flowyHeading">
-        <span className={mali.className}>go to home page</span>
+        <span className={mali.className}>why are you here</span>
       </h1>
     </main>
   )

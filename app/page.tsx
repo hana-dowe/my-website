@@ -1,4 +1,8 @@
+'use client' // hanatodo move parts that need client to a separate file?
+
 import { Mali } from 'next/font/google'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 import Button from '@/app/components/button'
 import FloatingProjectIcon from '@/app/components/floatingProjectIcon'
@@ -9,19 +13,9 @@ import LinkedInIcon from '@/app/components/icons/linkedInIcon'
 import MailIcon from '@/app/components/icons/mailIcon'
 import MyFace from '@/app/components/myFace'
 import Polaroid from '@/app/components/polaroid'
+import ProjectModal from '@/app/components/projectModal'
+import projects, { shuffle } from '@/app/projects/projects'
 import { Project } from '@/app/types/types'
-import alida from '@/public/alida/alida-NoOutline.png'
-import alidaLogo from '@/public/alida/logo.svg'
-import deerhacksLogo from '@/public/deerhacks/logo.png'
-import deerhacksLandingPage from '@/public/deerhacks/MNBuilding.png'
-import luka from '@/public/magenetra/channelBanner.png'
-import lyricalTranslationIcon from '@/public/magenetra/lyricalTranslation.png'
-import pigeonBread from '@/public/pigeons/PigeonBread.png'
-import pigeonSelfie from '@/public/pigeons/pigeonSelfie.png'
-import skippyLogo from '@/public/skippy/Skippy.png'
-import skippyPlaying from '@/public/skippy/SkippyPlaying.png'
-import spellWellLandingPage from '@/public/spellwell/landingPage.png'
-import spellWellLogo from '@/public/spellwell/wizard.png'
 
 const mali = Mali({
   weight: ['600', '700'],
@@ -30,68 +24,20 @@ const mali = Mali({
   display: 'swap',
 })
 
-let projects: Project[] = [
-  {
-    name: "Pigeons Aren't Real",
-    logoSrc: pigeonBread,
-    polaroidSrc: pigeonSelfie,
-    polaroidAlt: 'Pigeon Selfie',
-    href: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM', // hanatodo
-  },
-  {
-    name: 'DeerHacks',
-    logoSrc: deerhacksLogo,
-    polaroidSrc: deerhacksLandingPage,
-    polaroidAlt: 'DeerHacks Landing Page',
-    href: 'https://2024.deerhacks.ca/',
-  },
-  {
-    name: 'Skippy the Swimmer',
-    logoSrc: skippyLogo,
-    polaroidSrc: skippyPlaying,
-    polaroidAlt: 'Skippy Playing with Skimpy',
-    href: 'https://studioberry.itch.io/skippy-the-swimmer',
-  },
-  {
-    name: 'Alida',
-    logoSrc: alidaLogo,
-    polaroidSrc: alida,
-    polaroidAlt: 'Alida Dashboard',
-    href: 'https://www.alida.com/touchpoint',
-  },
-  {
-    name: 'Spell Well',
-    logoSrc: spellWellLogo,
-    polaroidSrc: spellWellLandingPage,
-    polaroidAlt: 'Spell Well Landing Page',
-    href: 'https://hana-dowe.github.io/SpellWell/',
-  },
-  {
-    name: 'Magenetra',
-    logoSrc: lyricalTranslationIcon, // hanatodo make icon color of sky?
-    polaroidSrc: luka,
-    polaroidAlt: 'Magenetra Icon',
-    href: 'https://youtube.com/@magenetra?si=IJxbSpzVaBOS-iBU',
-  },
-  // don't use svg as logo, because it gets squished on mobile
-]
-
-// https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
-const shuffle = (array: Project[]) => {
-  let arrayCopy = array.slice(0)
-  for (let i = arrayCopy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]]
-  }
-  return arrayCopy
-}
-
 export default function Home() {
   // hanatodo shake logos on first render (shake every couple seconds?? or on hover)
   // hanatodo random size project icons on lg size screen
   // hanatodo figure out icon layout for mobile landing page
 
   let shuffled_icons = shuffle(projects)
+
+  var projectsMap = new Map<string, Project>()
+  projects.forEach((project) => {
+    projectsMap.set(project.id, project)
+  })
+
+  const searchParams = useSearchParams()
+  const router = useRouter()
 
   return (
     <main>
@@ -270,9 +216,9 @@ export default function Home() {
             {projects.map((project, i) => {
               return (
                 <Polaroid
+                  id={project.id}
                   key={i + 1}
-                  description={project.name}
-                  href={project.href}
+                  name={project.name}
                   photoSrc={project.polaroidSrc ?? ''}
                   photoAlt={project.polaroidAlt ?? ''}
                   badgeSrc={project.logoSrc}
@@ -281,6 +227,11 @@ export default function Home() {
               )
             })}
           </div>
+          <ProjectModal
+            open={!!searchParams.get('project')}
+            onClose={() => router.push('/', { scroll: false })}
+            project={projectsMap.get(searchParams.get('project') as string)}
+          />
         </div>
       </div>
     </main>

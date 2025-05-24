@@ -34,8 +34,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // hanatodo change nav menu based on current page if I add multiple pages
-
   return (
     <html lang="en" className="overflow-hidden">
       <body className={`${nunito.className} bg-background-light p-2`}>
@@ -45,12 +43,12 @@ export default function RootLayout({
           <div className="flex flex-col w-full p-2 overflow-x-visible overflow-y-auto customScrollbar scroll-smooth">
             <div
               id="home"
-              className="flex mx-auto px-4 md:px-16 w-full pt-16 justify-center flex-grow z-0"
+              className="flex mx-auto px-4 md:px-16 w-full pt-16 justify-center flex-grow"
             >
               {children}
             </div>
 
-            <div className="flex flex-col items-center py-8 z-20">
+            <div className="flex flex-col items-center py-8">
               <div className="flex flex-row gap-6 justify-center py-8">
                 <IconButton href="mailto:han_d87@outlook.com">
                   <MailIcon />

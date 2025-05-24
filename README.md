@@ -37,6 +37,10 @@ Check linting/TS/Format: `bun dev`
 
 - steps: https://dev.to/daviidy/6-steps-to-deploy-your-react-nextjs-app-with-github-pages-33ck
 
-# utilize next project/folder structure
+# Next project/folder structure
 
 https://nextjs.org/docs/app/getting-started/project-structure#routing-files
+
+# Route as modal
+
+https://github.com/vercel/next.js/tree/canary/examples/with-route-as-modal

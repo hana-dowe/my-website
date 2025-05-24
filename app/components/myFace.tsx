@@ -11,6 +11,8 @@ type Props = {
 
 // https://charat.me/portrait/
 
+// hanatodo get svg as code so I can change color here?
+
 const MyFace = (props: Props) => {
   const { className, outline = false } = props
 
@@ -23,7 +25,7 @@ const MyFace = (props: Props) => {
         priority
       />
       {!outline && (
-        <div className="absolute top-[59%] left-[52%] -translate-x-[35%] -translate-y-20 group-hover:top-[89%] object-center scale-125 z-10 transition-all opacity-0 pointer-events-none group-hover:opacity-100">
+        <div className="absolute top-[59%] left-[52%] -translate-x-[35%] -translate-y-20 group-hover:top-[89%] object-center scale-125 transition-all opacity-0 pointer-events-none group-hover:opacity-100">
           <Image
             className="w-full h-auto select-none"
             src={sunglasses}
