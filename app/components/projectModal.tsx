@@ -19,7 +19,7 @@ const ProjectModal = (props: Props) => {
 
   return (
     <div
-      className={`${open ? 'absolute' : 'hidden'} absolute m-2 top-0 z-50 text-mainDark w-[calc(100%-1rem)] h-[calc(100dvh-1rem)]`}
+      className={`${open ? 'absolute' : 'hidden'} m-2 top-0 left-0 z-50 text-mainDark w-[calc(100%-1rem)] h-[calc(100dvh-1rem)]`}
     >
       <div
         className={`absolute flex flex-col gap-8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-beige rounded-2xl w-max max-w-[85%] md:w-fit p-8 sm:p-20 items-center text-center`}

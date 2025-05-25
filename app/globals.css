@@ -107,7 +107,7 @@ h2 {
   transition: 0.1s ease-in-out;
 
   --c1: theme('colors.lightblue');
-  --c2: theme('colors.orange');
+  --c2: theme('colors.highlight');
   --c3: theme('colors.beige');
 
   --_p: 153% 68.5% at;
@@ -124,12 +124,12 @@ h2 {
     s 2s infinite alternate,
     m 3s infinite linear;
 }
-.flowyHeading:hover span:hover {
+/* .flowyHeading:hover span:hover {
   @media screen(md) {
-    /* transform: scale(1.02); */
-    --c2: theme('colors.pink');
+    transform: scale(1.02);
+    --c2: theme('colors.highlight');
   }
-}
+} hanatodo */
 
 .flowyHeaderTop {
   transition: 400ms ease-in-out;
@@ -196,7 +196,7 @@ h2 {
   }
 
   .animatedUnderline {
-    background: linear-gradient(to right, theme('colors.lightblue'), theme('colors.lightblue'));
+    background: linear-gradient(to right, theme('colors.highlight'), theme('colors.highlight'));
     background-size: 0 0.2em;
     background-position: 0 85%;
     background-repeat: no-repeat;

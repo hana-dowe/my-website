@@ -78,6 +78,12 @@ const projects: Project[] = [
   // don't use svg as logo, because it gets squished on mobile
 ]
 
+// hantodo not using for now delete later if not needed
+const projectsMap = new Map<string, Project>()
+projects.forEach((project) => {
+  projectsMap.set(project.id, project)
+})
+
 // https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
 export const shuffle = (array: Project[]) => {
   let arrayCopy = array.slice(0)

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 import { Project } from '@/app/types/types'
@@ -24,12 +26,18 @@ const FloatingProjectIcon = (props: Props) => {
   const randomDelay = delays[random % delays.length]
 
   return (
-    <a href={'#' + id} className={`w-1/3 h-full ${aClassNames[location]} ${randomScale}`}>
+    <a
+      href="" // mouse doesn't change pointer if removed & doesn't focus (but that part's fine)
+      onClick={(e) => smoothScrollTo(e, id)}
+      className={`w-1/3 h-full ${aClassNames[location]} ${randomScale}`}
+      suppressHydrationWarning
+    >
       <Image
         className={`projectIcon float`}
         style={{ animationDelay: randomDelay }}
         src={logoSrc}
         alt={name + ' Logo'}
+        suppressHydrationWarning // it doesn't like that Math.random is different on server and client but its just decorative so ignore them
       />
     </a>
   )
@@ -76,6 +84,16 @@ const aClassNames: IconLocationClasses = {
 
   'bottom-even': '-rotate-12 translate-y-2',
   'bottom-odd': 'rotate-6 -translate-y-2',
+}
+
+const smoothScrollTo = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, scrollId: string) => {
+  e.preventDefault()
+  const element = document.getElementById(scrollId)
+  if (!element) return
+  element.scrollIntoView({
+    block: 'center',
+    behavior: 'smooth',
+  })
 }
 
 export default FloatingProjectIcon

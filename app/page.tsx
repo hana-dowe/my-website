@@ -1,8 +1,4 @@
-'use client' // hanatodo move parts that need client to a separate file?
-
 import { Mali } from 'next/font/google'
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from 'next/navigation'
 
 import Button from '@/app/components/button'
 import FloatingProjectIcon from '@/app/components/floatingProjectIcon'
@@ -13,9 +9,7 @@ import LinkedInIcon from '@/app/components/icons/linkedInIcon'
 import MailIcon from '@/app/components/icons/mailIcon'
 import MyFace from '@/app/components/myFace'
 import Polaroid from '@/app/components/polaroid'
-import ProjectModal from '@/app/components/projectModal'
 import projects, { shuffle } from '@/app/projects/projects'
-import { Project } from '@/app/types/types'
 
 const mali = Mali({
   weight: ['600', '700'],
@@ -26,18 +20,9 @@ const mali = Mali({
 
 export default function Home() {
   // hanatodo shake logos on first render (shake every couple seconds?? or on hover)
-  // hanatodo random size project icons on lg size screen
   // hanatodo figure out icon layout for mobile landing page
 
-  let shuffled_icons = shuffle(projects)
-
-  var projectsMap = new Map<string, Project>()
-  projects.forEach((project) => {
-    projectsMap.set(project.id, project)
-  })
-
-  const searchParams = useSearchParams()
-  const router = useRouter()
+  const shuffledProjects = shuffle(projects) // runs twice (server + client) if this file has 'use client' and messes up onClick in projectIcon
 
   return (
     <main>
@@ -45,13 +30,13 @@ export default function Home() {
         <div className="flex flex-col my-auto gap-y-2 max-w-full m-auto sm:pb-8 self-center w-fit items-center sm:min-h-[calc(100dvh-8rem)] justify-center">
           <div className="flex flex-row w-full justify-between lg:w-[110%] relative items-start">
             <div className="hidden w-1/2 lg:w-1/3 sm:flex flex-row">
-              <FloatingProjectIcon {...shuffled_icons[0]} location="top-left-0" />
-              <FloatingProjectIcon {...shuffled_icons[1]} location="top-left-1" />
+              <FloatingProjectIcon {...shuffledProjects[0]} location="top-left-0" />
+              <FloatingProjectIcon {...shuffledProjects[1]} location="top-left-1" />
             </div>
             <MyFace className="hidden lg:flex w-48 left-0 right-0 m-auto" />
             <div className="hidden sm:w-1/2 lg:w-1/3 sm:flex flex-row justify-end">
-              <FloatingProjectIcon {...shuffled_icons[2]} location="top-right-0" />
-              <FloatingProjectIcon {...shuffled_icons[3]} location="top-right-1" />
+              <FloatingProjectIcon {...shuffledProjects[2]} location="top-right-0" />
+              <FloatingProjectIcon {...shuffledProjects[3]} location="top-right-1" />
             </div>
           </div>
 
@@ -80,24 +65,24 @@ export default function Home() {
 
           <div className=" hidden sm:flex flex-col sm:flex-row items-center w-full justify-between lg:w-[110%]">
             <div className="w-full sm:w-1/2 lg:w-1/3 flex flex-row">
-              <FloatingProjectIcon {...shuffled_icons[3]} location="bottom-left-0" />
-              <FloatingProjectIcon {...shuffled_icons[4]} location="bottom-left-1" />
-              <FloatingProjectIcon {...shuffled_icons[2]} location="bottom-left-2" />
+              <FloatingProjectIcon {...shuffledProjects[3]} location="bottom-left-0" />
+              <FloatingProjectIcon {...shuffledProjects[4]} location="bottom-left-1" />
+              <FloatingProjectIcon {...shuffledProjects[2]} location="bottom-left-2" />
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/3 flex flex-row justify-end">
-              <FloatingProjectIcon {...shuffled_icons[1]} location="bottom-right-0" />
-              <FloatingProjectIcon {...shuffled_icons[5]} location="bottom-right-1" />
-              <FloatingProjectIcon {...shuffled_icons[0]} location="bottom-right-2" />
+              <FloatingProjectIcon {...shuffledProjects[1]} location="bottom-right-0" />
+              <FloatingProjectIcon {...shuffledProjects[5]} location="bottom-right-1" />
+              <FloatingProjectIcon {...shuffledProjects[0]} location="bottom-right-2" />
             </div>
           </div>
         </div>
 
         <div className="flex sm:hidden items-center w-full justify-between">
-          <FloatingProjectIcon {...shuffled_icons[0]} location="bottom-even" />
-          <FloatingProjectIcon {...shuffled_icons[1]} location="bottom-odd" />
-          <FloatingProjectIcon {...shuffled_icons[2]} location="bottom-even" />
-          <FloatingProjectIcon {...shuffled_icons[3]} location="bottom-odd" />
-          <FloatingProjectIcon {...shuffled_icons[4]} location="bottom-even" />
+          <FloatingProjectIcon {...shuffledProjects[0]} location="bottom-even" />
+          <FloatingProjectIcon {...shuffledProjects[1]} location="bottom-odd" />
+          <FloatingProjectIcon {...shuffledProjects[2]} location="bottom-even" />
+          <FloatingProjectIcon {...shuffledProjects[3]} location="bottom-odd" />
+          <FloatingProjectIcon {...shuffledProjects[4]} location="bottom-even" />
         </div>
 
         <div
@@ -178,23 +163,10 @@ export default function Home() {
             </h1>
             {projects.map((project, i) => {
               return (
-                <Polaroid
-                  id={project.id}
-                  key={i + 1}
-                  name={project.name}
-                  photoSrc={project.polaroidSrc ?? ''}
-                  photoAlt={project.polaroidAlt ?? ''}
-                  badgeSrc={project.logoSrc}
-                  variant={i % 2 == 0 ? 'right' : 'left'}
-                />
+                <Polaroid key={i + 1} project={project} variant={i % 2 == 0 ? 'right' : 'left'} />
               )
             })}
           </div>
-          <ProjectModal
-            open={!!searchParams.get('project')}
-            onClose={() => router.push('/', { scroll: false })}
-            project={projectsMap.get(searchParams.get('project') as string)}
-          />
         </div>
       </div>
     </main>
