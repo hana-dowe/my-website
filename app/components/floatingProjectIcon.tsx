@@ -3,6 +3,7 @@
 import Image from 'next/image'
 
 import { Project } from '@/app/types/types'
+import { smoothScrollTo } from '@/app/utils/utils'
 
 type Props = {
   location: IconLocation
@@ -28,7 +29,7 @@ const FloatingProjectIcon = (props: Props) => {
   return (
     <a
       href="" // mouse doesn't change pointer if removed & doesn't focus (but that part's fine)
-      onClick={(e) => smoothScrollTo(e, id)}
+      onClick={(e) => smoothScrollTo(e, id, 'center')}
       className={`w-1/3 h-full ${aClassNames[location]} ${randomScale}`}
       suppressHydrationWarning
     >
@@ -84,16 +85,6 @@ const aClassNames: IconLocationClasses = {
 
   'bottom-even': '-rotate-12 translate-y-2',
   'bottom-odd': 'rotate-6 -translate-y-2',
-}
-
-const smoothScrollTo = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, scrollId: string) => {
-  e.preventDefault()
-  const element = document.getElementById(scrollId)
-  if (!element) return
-  element.scrollIntoView({
-    block: 'center',
-    behavior: 'smooth',
-  })
 }
 
 export default FloatingProjectIcon

@@ -6,6 +6,7 @@ import HomeIcon from '@/app/components/icons/homeIcon'
 import LinkedInIcon from '@/app/components/icons/linkedInIcon'
 import MailIcon from '@/app/components/icons/mailIcon'
 import MenuIcon from '@/app/components/icons/menuIcon'
+import { smoothScrollTo } from '@/app/utils/utils'
 
 const NavMenu = () => {
   var [navOpen, setNavOpen] = useState(false)
@@ -17,7 +18,13 @@ const NavMenu = () => {
   return (
     <div className="flex justify-between absolute w-[calc(100%-8px)]">
       <div className="pl-3 pt-3 w-fit">
-        <a href="#home" className="text-beige group hidden sm:block">
+        <a
+          href=""
+          onClick={(e) => {
+            smoothScrollTo(e, 'home', 'start')
+          }}
+          className="text-beige group hidden sm:block"
+        >
           <HomeIcon className="group-hover:scale-110 h-8 box-content p-3" />
         </a>
       </div>
@@ -28,7 +35,14 @@ const NavMenu = () => {
         >
           <div className="flex justify-between">
             <div className={`${!navOpen && 'hidden'}`}>
-              <a href="#home" onClick={() => setNavOpen(false)} className="group">
+              <a
+                href=""
+                onClick={(e) => {
+                  setNavOpen(false)
+                  smoothScrollTo(e, 'home', 'start')
+                }}
+                className="group"
+              >
                 <HomeIcon className="group-hover:scale-110 h-full box-content" />
               </a>
             </div>
