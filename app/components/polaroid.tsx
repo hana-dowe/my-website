@@ -1,9 +1,6 @@
-'use client'
-
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
 import ProjectModal from '@/app/components/projectModal'
 import UnderlineHeading from '@/app/components/underlineHeading'
@@ -19,9 +16,6 @@ type Props = {
 
 const Polaroid = (props: Props) => {
   const { project, variant = 'left' } = props
-
-  const searchParams = useSearchParams()
-  const router = useRouter()
 
   return (
     <>
@@ -58,11 +52,9 @@ const Polaroid = (props: Props) => {
           alt={project.name + ' logo'}
         />
       </Link>
-      <ProjectModal
-        open={searchParams.get('project') == project.id}
-        onClose={() => router.push('/', { scroll: false })}
-        project={project}
-      />
+      <Suspense>
+        <ProjectModal project={project} />
+      </Suspense>
     </>
   )
 }
