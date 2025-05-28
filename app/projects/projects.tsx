@@ -1,4 +1,10 @@
-import { Project } from '@/app/types/types'
+import GithubIcon from '@/app/components/icons/github'
+import OpenNewIcon from '@/app/components/icons/openNew'
+import PdfIcon from '@/app/components/icons/pdf'
+import TumblrIcon from '@/app/components/icons/tumblr'
+import XIcon from '@/app/components/icons/x'
+import YoutubeIcon from '@/app/components/icons/youtube'
+import { Project, ProjectHrefTypes, SvgProps } from '@/app/types/types'
 import alida from '@/public/alida/alida-NoOutline.png'
 import alidaLogo from '@/public/alida/logo.svg'
 import deerhacksLogo from '@/public/deerhacks/logo.png'
@@ -21,7 +27,12 @@ const projects: Project[] = [
     logoSrc: pigeonBread,
     polaroidSrc: pigeonSelfie,
     polaroidAlt: 'Pigeon Selfie',
-    href: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM', // hanatodo
+    mainHref: {
+      to: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM',
+    }, // hanatodo
+    subHrefs: {
+      pdf: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM',
+    },
   },
   {
     id: 'deerhacks',
@@ -32,7 +43,11 @@ const projects: Project[] = [
     logoSrc: deerhacksLogo,
     polaroidSrc: deerhacksLandingPage,
     polaroidAlt: 'DeerHacks Landing Page',
-    href: 'https://2024.deerhacks.ca/',
+    mainHref: { to: 'https://2024.deerhacks.ca/' },
+    subHrefs: {
+      default: 'https://2024.deerhacks.ca/',
+      github: 'https://github.com/utmmcss/deerhacks',
+    },
   },
   {
     id: 'skippy',
@@ -42,7 +57,11 @@ const projects: Project[] = [
     logoSrc: skippyLogo,
     polaroidSrc: skippyPlaying,
     polaroidAlt: 'Skippy Playing with Skimpy',
-    href: 'https://studioberry.itch.io/skippy-the-swimmer',
+    mainHref: { to: 'https://studioberry.itch.io/skippy-the-swimmer' },
+    subHrefs: {
+      default: 'https://studioberry.itch.io/skippy-the-swimmer',
+      youtube: 'https://youtu.be/5J1WIgDGCDQ?si=4aJoe1QQ1_4yciym',
+    },
   },
   {
     id: 'alida',
@@ -53,7 +72,10 @@ const projects: Project[] = [
     logoSrc: alidaLogo,
     polaroidSrc: alida,
     polaroidAlt: 'Alida Dashboard',
-    href: 'https://www.alida.com/touchpoint',
+    mainHref: { to: 'https://www.alida.com/touchpoint' },
+    subHrefs: {
+      default: 'https://www.alida.com/touchpoint',
+    },
   },
   {
     id: 'spellwell',
@@ -63,7 +85,10 @@ const projects: Project[] = [
     logoSrc: spellWellLogo,
     polaroidSrc: spellWellLandingPage,
     polaroidAlt: 'Spell Well Landing Page',
-    href: 'https://hana-dowe.github.io/SpellWell/',
+    mainHref: { to: 'https://hana-dowe.github.io/SpellWell/' },
+    subHrefs: {
+      default: 'https://hana-dowe.github.io/SpellWell/',
+    },
   },
   {
     id: 'magenetra',
@@ -73,10 +98,24 @@ const projects: Project[] = [
     logoSrc: lyricalTranslationIcon, // hanatodo make icon color of the starry sky?
     polaroidSrc: luka,
     polaroidAlt: 'Magenetra Icon',
-    href: 'https://youtube.com/@magenetra?si=IJxbSpzVaBOS-iBU',
+    mainHref: { to: 'https://youtube.com/@magenetra?si=IJxbSpzVaBOS-iBU' },
+    subHrefs: {
+      youtube: 'https://youtube.com/@magenetra?si=IJxbSpzVaBOS-iBU',
+      tumblr: 'https://magenetratranslations.tumblr.com',
+      x: 'https://twitter.com/the_magenetra',
+    },
   },
   // don't use svg as logo, because it gets squished on mobile
 ]
+
+export const projectHrefIcons: { [key in ProjectHrefTypes]: (props: SvgProps) => JSX.Element } = {
+  default: OpenNewIcon,
+  github: GithubIcon,
+  youtube: YoutubeIcon,
+  tumblr: TumblrIcon,
+  x: XIcon,
+  pdf: PdfIcon,
+}
 
 // hantodo not using for now delete later if not needed
 const projectsMap = new Map<string, Project>()

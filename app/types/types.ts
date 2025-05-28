@@ -8,5 +8,20 @@ export type Project = {
   logoSrc: string | StaticImport
   polaroidSrc: string | StaticImport
   polaroidAlt: string
-  href: string
+  mainHref: {
+    to: string
+    buttonText?: string
+    buttonIcon?: React.ReactNode
+  }
+  subHrefs?: ProjectHrefs
+}
+
+export type ProjectHrefTypes = 'github' | 'youtube' | 'tumblr' | 'x' | 'pdf' | 'default'
+
+type ProjectHrefs = {
+  [key in ProjectHrefTypes]?: string
+}
+
+export type SvgProps = {
+  className?: React.ComponentProps<'svg'>['className']
 }

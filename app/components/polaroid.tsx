@@ -47,7 +47,7 @@ const Polaroid = (props: Props) => {
         </div>
         <Image
           className={`projectIcon absolute bottom-4 !w-1/3 h-auto
-              ${variant == 'left' ? '-left-8 -rotate-3 group-hover:-rotate-12 group-hover:-left-10' : '-right-8 rotate-6 group-hover:rotate-12 group-hover:-right-10'}`}
+              ${variant == 'left' ? '-left-8 -rotate-3 sm:group-hover:-rotate-12 sm:group-hover:-left-10' : '-right-8 rotate-6 sm:group-hover:rotate-12 sm:group-hover:-right-10'}`}
           src={project.logoSrc}
           alt={project.name + ' logo'}
         />

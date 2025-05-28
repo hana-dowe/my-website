@@ -1,11 +1,11 @@
 'use client'
 import { useState } from 'react'
 
-import GithubIcon from '@/app/components/icons/githubIcon'
-import HomeIcon from '@/app/components/icons/homeIcon'
-import LinkedInIcon from '@/app/components/icons/linkedInIcon'
-import MailIcon from '@/app/components/icons/mailIcon'
-import MenuIcon from '@/app/components/icons/menuIcon'
+import GithubIcon from '@/app/components/icons/github'
+import HomeIcon from '@/app/components/icons/home'
+import LinkedInIcon from '@/app/components/icons/linkedIn'
+import MailIcon from '@/app/components/icons/mail'
+import MenuIcon from '@/app/components/icons/menu'
 import { smoothScrollTo } from '@/app/utils/utils'
 
 const NavMenu = () => {

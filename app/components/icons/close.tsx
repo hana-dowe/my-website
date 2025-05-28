@@ -1,8 +1,6 @@
-type Props = {
-  className?: React.ComponentProps<'svg'>['className']
-}
+import { SvgProps } from '@/app/types/types'
 
-const CloseIcon = (props: Props) => {
+const CloseIcon = (props: SvgProps) => {
   const { className } = props
   return (
     <svg className={`h-full fill-current ${className}`} viewBox="0 0 54 54">

@@ -4,9 +4,9 @@ import Button from '@/app/components/button'
 import FloatingProjectIcon from '@/app/components/floatingProjectIcon'
 import IconButton from '@/app/components/iconButton'
 import GachaIcon from '@/app/components/icons/gacha'
-import GithubIcon from '@/app/components/icons/githubIcon'
-import LinkedInIcon from '@/app/components/icons/linkedInIcon'
-import MailIcon from '@/app/components/icons/mailIcon'
+import GithubIcon from '@/app/components/icons/github'
+import LinkedInIcon from '@/app/components/icons/linkedIn'
+import MailIcon from '@/app/components/icons/mail'
 import MyFace from '@/app/components/myFace'
 import Polaroid from '@/app/components/polaroid'
 import projects, { shuffle } from '@/app/projects/projects'
@@ -113,13 +113,17 @@ export default function Home() {
             <br />
             <br />
             <div className="flex flex-row gap-6 my-4 mt-auto">
-              <IconButton href="mailto:hanadowe@gmail.com">
+              <IconButton href="mailto:hanadowe@gmail.com" ariaLabel="My Email">
                 <MailIcon />
               </IconButton>
-              <IconButton href="https://www.linkedin.com/in/hanadowe/" newTab>
+              <IconButton
+                href="https://www.linkedin.com/in/hanadowe/"
+                ariaLabel="My LinkedIn"
+                newTab
+              >
                 <LinkedInIcon />
               </IconButton>
-              <IconButton href="https://github.com/hana-dowe" newTab>
+              <IconButton href="https://github.com/hana-dowe" ariaLabel="My GitHub" newTab>
                 <GithubIcon />
               </IconButton>
             </div>
@@ -128,11 +132,11 @@ export default function Home() {
           <div className="hidden lg:w-2/5 h-full flex-col items-center pt-8">
             <div className="text-center pt-4 bg-background rounded-xl w-4/5">
               <p>hanatodo</p>
-              <p>always start with pic of myself</p>
+              <p>always start with pic of myself?</p>
               <p>i like music</p>
               <p>I know two languages (more if you count programming languages)</p>
-              <p>favourite game</p>
-              <p>magenetra</p>
+              <p>favourite game - kirby yarn and little big planet</p>
+              <p>magenetra - favourite tl</p>
               <p>subbed videos</p>
               <p>hobby(concerts)</p>
               <p>I like cats :D</p>

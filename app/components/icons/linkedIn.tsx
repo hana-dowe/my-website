@@ -1,8 +1,6 @@
-type Props = {
-  className?: React.ComponentProps<'svg'>['className']
-}
+import { SvgProps } from '@/app/types/types'
 
-const linkedInIcon = (props: Props) => {
+const linkedInIcon = (props: SvgProps) => {
   const { className } = props
   return (
     <svg

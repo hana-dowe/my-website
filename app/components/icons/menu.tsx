@@ -1,8 +1,6 @@
-type Props = {
-  className?: React.ComponentProps<'svg'>['className']
-}
+import { SvgProps } from '@/app/types/types'
 
-const MenuIcon = (props: Props) => {
+const MenuIcon = (props: SvgProps) => {
   const { className } = props
   return (
     <svg

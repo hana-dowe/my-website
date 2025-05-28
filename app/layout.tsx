@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Mali, Nunito } from 'next/font/google'
 
 import IconButton from '@/app/components/iconButton'
-import GithubIcon from '@/app/components/icons/githubIcon'
-import LinkedInIcon from '@/app/components/icons/linkedInIcon'
-import MailIcon from '@/app/components/icons/mailIcon'
+import GithubIcon from '@/app/components/icons/github'
+import LinkedInIcon from '@/app/components/icons/linkedIn'
+import MailIcon from '@/app/components/icons/mail'
 import MyFace from '@/app/components/myFace'
 import NavMenu from '@/app/components/navMenu'
 
@@ -50,13 +50,17 @@ export default function RootLayout({
 
             <div className="flex flex-col items-center py-8">
               <div className="flex flex-row gap-6 justify-center py-8">
-                <IconButton href="mailto:hanadowe@gmail.com">
+                <IconButton href="mailto:hanadowe@gmail.com" ariaLabel="My Email">
                   <MailIcon />
                 </IconButton>
-                <IconButton href="https://www.linkedin.com/in/hanadowe/" newTab>
+                <IconButton
+                  href="https://www.linkedin.com/in/hanadowe/"
+                  ariaLabel="My LinkedIn"
+                  newTab
+                >
                   <LinkedInIcon />
                 </IconButton>
-                <IconButton href="https://github.com/hana-dowe" newTab>
+                <IconButton href="https://github.com/hana-dowe" ariaLabel="My GitHub" newTab>
                   <GithubIcon />
                 </IconButton>
               </div>
