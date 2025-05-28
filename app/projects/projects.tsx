@@ -28,10 +28,10 @@ const projects: Project[] = [
     polaroidSrc: pigeonSelfie,
     polaroidAlt: 'Pigeon Selfie',
     mainHref: {
-      to: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM',
+      to: 'https://drive.google.com/file/d/11mpvWapGpEDHvyFRlCmzw37xtGKtOw5A/view?usp=drive_link',
     }, // hanatodo
     subHrefs: {
-      pdf: 'https://www.linkedin.com/in/hanadowe/overlay/1712942298600/single-media-viewer/?profileId=ACoAADsJIQwB8f5KQzGKK49nwoUz4x0gw3T2KkM',
+      pdf: 'https://drive.google.com/file/d/11mpvWapGpEDHvyFRlCmzw37xtGKtOw5A/view?usp=drive_link',
     },
   },
   {
