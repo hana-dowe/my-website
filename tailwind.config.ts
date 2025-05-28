@@ -22,7 +22,7 @@ const config: Config = {
         orange: 'rgb(251, 206, 177)',
         pink: 'rgb(255, 196, 219)',
         beige: 'rgb(255, 245, 234)',
-        highlight: 'rgba(161, 199, 205, 0.5)',
+        highlight: 'rgb(208, 222, 220)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

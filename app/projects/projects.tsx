@@ -10,13 +10,13 @@ import alidaLogo from '@/public/alida/logo.svg'
 import deerhacksLogo from '@/public/deerhacks/logo.png'
 import deerhacksLandingPage from '@/public/deerhacks/MNBuilding.png'
 import luka from '@/public/magenetra/channelBanner.png'
-import lyricalTranslationIcon from '@/public/magenetra/lyricalTranslation.png'
+import lyricalTranslationIcon from '@/public/magenetra/lyricalTranslation.svg'
 import pigeonBread from '@/public/pigeons/PigeonBread.png'
 import pigeonSelfie from '@/public/pigeons/pigeonSelfie.png'
 import skippyLogo from '@/public/skippy/Skippy.png'
 import skippyPlaying from '@/public/skippy/SkippyPlaying.png'
 import spellWellLandingPage from '@/public/spellwell/landingPage.png'
-import spellWellLogo from '@/public/spellwell/wizard.png'
+import spellWellLogo from '@/public/spellwell/wizard.svg'
 
 const projects: Project[] = [
   {
@@ -68,7 +68,7 @@ const projects: Project[] = [
     name: 'Alida',
     role: 'Software Development',
     summary:
-      'Worked on Alida Touchpoint, a customer experience management platform that helps businesses collect and analyze customer feedback.',
+      'Co-op placement at on the Touchpoint team at Alida, working on a customer experience management platform that helps businesses collect and analyze customer feedback.',
     logoSrc: alidaLogo,
     polaroidSrc: alida,
     polaroidAlt: 'Alida Dashboard',
@@ -94,7 +94,7 @@ const projects: Project[] = [
     id: 'magenetra',
     name: 'Magenetra',
     role: 'Translation/Proofreading',
-    summary: 'A group that translates Japanese vocaloid songs.',
+    summary: 'Japanese vocaloid song translations.',
     logoSrc: lyricalTranslationIcon, // hanatodo make icon color of the starry sky?
     polaroidSrc: luka,
     polaroidAlt: 'Magenetra Icon',
@@ -105,7 +105,7 @@ const projects: Project[] = [
       x: 'https://twitter.com/the_magenetra',
     },
   },
-  // don't use svg as logo, because it gets squished on mobile
+  // open svg file with text editor and add preserveAspectRatio="none slice" to svg tag if adding as logo, otherwise it'll get squished on mobile
 ]
 
 export const projectHrefIcons: { [key in ProjectHrefTypes]: (props: SvgProps) => JSX.Element } = {

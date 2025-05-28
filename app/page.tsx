@@ -97,18 +97,17 @@ export default function Home() {
               <span className={mali.className}>Hi I'm Hana!</span>
             </h1>
             <p>
-              I'm a software developer based in Toronto. I'm passionate about understanding how
-              things work and how people use technology—it's what drew me to UI/UX design. I
-              completed a double major in Computer Science and Communication, Culture, Information &
-              Technology (CCIT) at the University of Toronto. I gained professional experience
-              through a co-op placement at Alida, contributing to front-end and back-end
-              development, along with some UX design.
+              I'm a software developer based in Toronto with a passion for understanding how things
+              work and how people use technology. I completed a double major in Computer Science and
+              Communication, Culture, Information & Technology (CCIT) at the University of Toronto.
+              During my co-op placement at Alida, I gained professional experience contributing to
+              front-end and back-end development, and even some UX design.
             </p>
             <br />
             <p>
               I'm a big fan of Japanese music and have been working as a translator and proofreader
-              with the Magenetra team since 2016. We've translated over 400 songs to help
-              English-speaking audiences better connect with them.
+              with the Magenetra team since 2016. We've currently translated over 400 songs to help
+              English-speaking audiences better connect with their lyrics.
             </p>
             <br />
             <br />

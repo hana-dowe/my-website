@@ -11,8 +11,6 @@ type Props = {
 
 // https://charat.me/portrait/
 
-// hanatodo get svg as code so I can change color here?
-
 const MyFace = (props: Props) => {
   const { className, outline = false } = props
 

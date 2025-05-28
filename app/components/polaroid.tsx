@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 
 import ProjectModal from '@/app/components/projectModal'
-import UnderlineHeading from '@/app/components/underlineHeading'
 import { Project } from '@/app/types/types'
 
 type Props = {
@@ -11,7 +10,6 @@ type Props = {
   variant?: 'left' | 'right'
 }
 
-// hanatodo do i need animated underline??
 // hanatodo do i need tape? replace with pin?
 
 const Polaroid = (props: Props) => {
@@ -38,15 +36,15 @@ const Polaroid = (props: Props) => {
               />
             </div>
             <div className="text-center mx-[calc(33.333%_-_2rem)] mt-4">
-              <UnderlineHeading className="text-mainDark text-xl lg:text-3xl inline">
+              <h2 className="font-bold mb-4 animatedUnderline group-hover:animatedUnderline-active text-mainDark text-xl lg:text-3xl inline">
                 {project.name}
-              </UnderlineHeading>
+              </h2>
             </div>
           </div>
           <div className="absolute w-1/2 h-[15%] bg-white top-2 left-1/4 -translate-y-1/2 object-center tape" />
         </div>
         <Image
-          className={`projectIcon absolute bottom-4 !w-1/3 h-auto
+          className={`projectIcon absolute bottom-4 !w-1/3 h-auto sm:group-hover:bottom-6
               ${variant == 'left' ? '-left-8 -rotate-3 sm:group-hover:-rotate-12 sm:group-hover:-left-10' : '-right-8 rotate-6 sm:group-hover:rotate-12 sm:group-hover:-right-10'}`}
           src={project.logoSrc}
           alt={project.name + ' logo'}
