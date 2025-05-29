@@ -87,15 +87,16 @@ export default function Home() {
 
         <div
           id="about"
-          className="bg-background-dark rounded-2xl px-8 lg:mx-24 flex flex-col lg:flex-row"
+          className="bg-background-dark rounded-2xl p-8 lg:mx-24 flex flex-col lg:flex-row"
         >
           <div
-            className="flex flex-col"
+            className="flex flex-col gap-4"
             // hanatodo lg:w-3/5 after adding random fact section
           >
-            <h1 key={0} className="text-[5vw] text-beige">
+            <h1 key={0} className="text-4xl md:text-6xl text-beige">
               <span className={mali.className}>Hi I'm Hana!</span>
             </h1>
+            <br />
             <p>
               I'm a software developer based in Toronto with a passion for understanding how things
               work and how people use technology. I completed a double major in Computer Science and
@@ -103,7 +104,6 @@ export default function Home() {
               During my co-op placement at Alida, I gained professional experience contributing to
               front-end and back-end development, and even some UX design.
             </p>
-            <br />
             <p>
               I'm a big fan of Japanese music and have been working as a translator and proofreader
               with the Magenetra team since 2016. We've currently translated over 400 songs to help

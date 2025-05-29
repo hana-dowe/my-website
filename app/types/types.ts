@@ -5,21 +5,23 @@ export type Project = {
   name: string
   role: string
   summary: string
-  logoSrc: string | StaticImport
-  polaroidSrc: string | StaticImport
+  logoSrc: StaticImport
+  polaroidSrc: StaticImport
   polaroidAlt: string
-  mainHref: {
-    to: string
-    buttonText?: string
-    buttonIcon?: React.ReactNode
-  }
-  subHrefs?: ProjectHrefs
+  hrefs: ProjectHrefs
+  images?: ProjectImage[]
 }
 
 export type ProjectHrefTypes = 'github' | 'youtube' | 'tumblr' | 'x' | 'pdf' | 'default'
 
 type ProjectHrefs = {
   [key in ProjectHrefTypes]?: string
+}
+
+type ProjectImage = {
+  src: StaticImport
+  alt: string
+  description?: string
 }
 
 export type SvgProps = {

@@ -13,7 +13,7 @@ const IconButton = (props: Props) => {
       href={href}
       {...(newTab && { target: '_blank' })}
       aria-label={ariaLabel}
-      className={`group ${secondary ? 'h-12' : 'h-14'}`}
+      className="group h-14"
     >
       <div
         className={`rounded-full h-full aspect-square border-2 p-1 
