@@ -10,14 +10,8 @@ import { Project, ProjectHrefTypes, SvgProps } from '@/app/types/types'
 import alidaPolaroid from '@/public/alida/alida-NoOutline.png'
 import alidaLogo from '@/public/alida/logo.svg'
 // deerhacks
-import deerhacksApplication from '@/public/deerhacks/application.png'
-import deerhacksDashboard from '@/public/deerhacks/dashboardFull.png'
-import deerhacksDeer from '@/public/deerhacks/deer.jpg'
-import deerhacksLandingPage from '@/public/deerhacks/landingPage.png'
 import deerhacksLogo from '@/public/deerhacks/logo.png'
 import deerhacksPolaroid from '@/public/deerhacks/MNBuilding.png'
-import deerhacksSchedule from '@/public/deerhacks/scheduleEvent.png'
-import deerhacksWireframe from '@/public/deerhacks/wireframe.png'
 // magenetra
 import magenetraPolaroid from '@/public/magenetra/channelBanner.png'
 import magenetraIcon from '@/public/magenetra/lyricalTranslation.svg'
@@ -25,19 +19,10 @@ import magenetraIcon from '@/public/magenetra/lyricalTranslation.svg'
 import pigeonsLogo from '@/public/pigeons/PigeonBread.png'
 import pigeonsPolaroid from '@/public/pigeons/pigeonSelfie.png'
 // skippy
-import skippyFindHome from '@/public/skippy/FindHome.png'
-import skippyMainMenu from '@/public/skippy/MainMenu.png'
-import skippyOriginalGame from '@/public/skippy/OriginalGame.png'
 import skippyLogo from '@/public/skippy/Skippy.png'
-import skippyBanner from '@/public/skippy/SkippyBanner.png'
 import skippyPolaroid from '@/public/skippy/SkippyPlaying.png'
-import skippyTempRoom from '@/public/skippy/TempRoom.png'
 // spellwell
-import spellWellDictionary from '@/public/spellwell/dictionaries.png'
-import spellWellGameScreen from '@/public/spellwell/gameScreen.png'
 import spellWellPolaroid from '@/public/spellwell/landingPage.png'
-import spellWellOriginalDictionary from '@/public/spellwell/originalDictionary.png'
-import spellWellPrototype from '@/public/spellwell/prototype.png'
 import spellWellLogo from '@/public/spellwell/wizard.svg'
 
 const projects: Project[] = [
@@ -69,28 +54,46 @@ const projects: Project[] = [
     },
     images: [
       {
-        src: deerhacksLandingPage,
+        src: 'deerhacks/landingPage.png',
         alt: 'DeerHacks Landing Page',
+        width: 1905,
+        height: 1198,
+        description: 'Home page!',
       },
       {
-        src: deerhacksDashboard,
+        src: 'deerhacks/dashboardFull.png',
         alt: 'DeerHacks Dashboard',
+        width: 993,
+        height: 1199,
+        description: 'Users log in with discord to view their dashboard',
       },
       {
-        src: deerhacksSchedule,
+        src: 'deerhacks/scheduleEvent.png',
         alt: 'DeerHacks Schedule with event details showing',
+        width: 1920,
+        height: 1200,
+        description: 'Dynamic schedule that updates with a CMS',
       },
       {
-        src: deerhacksApplication,
+        src: 'deerhacks/application.png',
         alt: 'DeerHacks Application Page',
+        width: 1899,
+        height: 1199,
+        description: 'Application submissions were done on the website as well',
       },
       {
-        src: deerhacksWireframe,
+        src: 'deerhacks/wireframe.png',
         alt: 'Wireframe of 3D model used on home page',
+        width: 1207,
+        height: 700,
+        description: 'Made the 3D model on blender',
       },
       {
-        src: deerhacksDeer,
+        src: 'deerhacks/deer.jpg',
         alt: 'An actual photo of a deer taken on campus',
+        width: 2992,
+        height: 5238,
+        description: 'An actual deer on campus',
       },
     ],
   },
@@ -108,24 +111,36 @@ const projects: Project[] = [
     },
     images: [
       {
-        src: skippyBanner,
+        src: 'skippy/SkippyBanner.png',
         alt: 'Banner art for Skippy the Swimmer',
+        width: 2024,
+        height: 850,
       },
       {
-        src: skippyFindHome,
+        src: 'skippy/FindHome.png',
         alt: 'Initial screen after starting the game',
+        width: 1432,
+        height: 793,
       },
       {
-        src: skippyMainMenu,
+        src: 'skippy/MainMenu.png',
         alt: 'Main menu of Skippy the Swimmer',
+        width: 1421,
+        height: 794,
       },
       {
-        src: skippyTempRoom,
+        src: 'skippy/TempRoom.png',
         alt: 'Room level design',
+        width: 698,
+        height: 481,
+        description: 'Planning the main level',
       },
       {
-        src: skippyOriginalGame,
+        src: 'skippy/OriginalGame.png',
         alt: 'First iteration of Skippy the Swimmer',
+        width: 779,
+        height: 433,
+        description: 'One of the first iterations of the game',
       },
     ],
   },
@@ -155,20 +170,28 @@ const projects: Project[] = [
     },
     images: [
       {
-        src: spellWellDictionary,
+        src: 'spellwell/dictionaries.png',
         alt: 'Dictionaries used in Spell Well',
+        width: 1881,
+        height: 1199,
       },
       {
-        src: spellWellOriginalDictionary,
+        src: 'spellwell/originalDictionary.png',
         alt: 'User created Dictionary screen',
+        width: 1881,
+        height: 1200,
       },
       {
-        src: spellWellGameScreen,
+        src: 'spellwell/gameScreen.png',
         alt: 'Spell Well Game Screen',
+        width: 1916,
+        height: 1120,
       },
       {
-        src: spellWellPrototype,
+        src: 'spellwell/prototype.png',
         alt: 'Spell Well Prototype design',
+        width: 1355,
+        height: 676,
       },
     ],
   },

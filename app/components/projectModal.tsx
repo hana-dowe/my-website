@@ -14,9 +14,9 @@ type Props = {
 
 // hanatodo animate (to make up for slow load or figure out why it's kind of slow)
 // hanatodo scroll to where polaroid is on reload
-// hanatodo add previous/next at bottom of modal
-// hanatodo make button big if only one
-// hanatodo move action buttons to bottom on mobile
+// hanatodo add previous/next at bottom of modal?
+// hanatodo make button big if only one?
+// hanatodo make component for action buttons?
 
 // Need to wrap with <Suspense> when using searchParams or will get error when trying to deploy
 
@@ -40,11 +40,11 @@ const ProjectModal = (props: Props) => {
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-full sm:w-max sm:max-w-[85%] sm:max-h-[85%] p-2 bg-beige rounded-2xl">
         <div
-          className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full h-full
-          px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 items-center text-center overflow-y-auto  customScrollbar content-center`}
+          className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full h-full px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 
+            items-center text-center overflow-y-auto customScrollbar content-center`}
         >
           <div
-            className={`flex flex-col lg:flex-row rounded-xl min-h-fit ${hasImages && 'lg:h-full'} gap-12 items-center text-center justify-center`}
+            className={`flex flex-col lg:flex-row rounded-xl min-h-fit ${hasImages && 'lg:h-full'} gap-12 items-start text-center justify-center`}
           >
             <button
               onClick={onClose}
@@ -59,39 +59,60 @@ const ProjectModal = (props: Props) => {
               </div>
             </button>
             <div
-              className={`flex flex-col gap-4 sm:gap-8 items-center justify-center ${hasImages ? 'sm:h-full lg:w-5/12' : 'w-full'}`}
+              className={`flex flex-col gap-4 sm:gap-8 items-center justify-center lg:sticky lg:top-0 lg:z-20 w-full ${hasImages && 'sm:h-full lg:w-5/12'}`}
             >
               <div className="flex flex-col gap-2 items-center mt-16 sm:mt-0">
                 <h1 className="text-4xl font-medium">{project.name}</h1>
                 <h1 className="text-lg uppercase">{project.role}</h1>
               </div>
               <p className="text-lg max-w-lg">{project.summary}</p>
-              {project.hrefs && (
-                <div className="flex flex-row gap-8 justify-center pt-2">
-                  {Object.keys(project.hrefs).map((key, index) => {
-                    const subHrefType = key as ProjectHrefTypes
-                    if (!project.hrefs) return
-                    const Icon = projectHrefIcons[subHrefType]
-                    return (
-                      <IconButton
-                        key={index}
-                        href={project.hrefs[subHrefType]}
-                        ariaLabel={subHrefType}
-                        newTab
-                        secondary
-                      >
-                        <Icon />
-                      </IconButton>
-                    )
-                  })}
-                </div>
-              )}
+
+              <div className="hidden lg:flex flex-row gap-8 justify-center pt-2">
+                {Object.keys(project.hrefs).map((key, index) => {
+                  const subHrefType = key as ProjectHrefTypes
+                  if (!project.hrefs) return
+                  const Icon = projectHrefIcons[subHrefType]
+                  return (
+                    <IconButton
+                      key={index}
+                      href={project.hrefs[subHrefType]}
+                      ariaLabel={subHrefType}
+                      newTab
+                      secondary
+                    >
+                      <Icon />
+                    </IconButton>
+                  )
+                })}
+              </div>
             </div>
             {hasImages && (
-              <div className="flex flex-row lg:w-7/12 lg:h-full gap-2">
-                <ImageGallery project={project} />
+              <div className="flex flex-row lg:w-7/12 gap-2 items-center m-auto">
+                <ImageGallery images={project.images ?? []} />
               </div>
             )}
+            <div
+              className={`lg:hidden flex flex-col gap-4 items-center justify-center w-full ${hasImages && 'sm:h-full lg:w-5/12'}`}
+            >
+              <div className="flex flex-row gap-8 justify-center pt-2">
+                {Object.keys(project.hrefs).map((key, index) => {
+                  const subHrefType = key as ProjectHrefTypes
+                  if (!project.hrefs) return
+                  const Icon = projectHrefIcons[subHrefType]
+                  return (
+                    <IconButton
+                      key={index}
+                      href={project.hrefs[subHrefType]}
+                      ariaLabel={subHrefType}
+                      newTab
+                      secondary
+                    >
+                      <Icon />
+                    </IconButton>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

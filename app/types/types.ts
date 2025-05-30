@@ -18,9 +18,11 @@ type ProjectHrefs = {
   [key in ProjectHrefTypes]?: string
 }
 
-type ProjectImage = {
-  src: StaticImport
+export type ProjectImage = {
+  src: string
   alt: string
+  width: number
+  height: number
   description?: string
 }
 
