@@ -86,7 +86,13 @@ const projects: Project[] = [
         alt: 'Wireframe of 3D model used on home page',
         width: 1207,
         height: 700,
-        description: 'Made the 3D model on blender',
+        description: 'Making the 3D model on blender',
+      },
+      {
+        src: 'deerhacks/closingCeremony.jpg',
+        alt: 'DeerHacks Closing Ceremony',
+        width: 1200,
+        height: 1800,
       },
       {
         src: 'deerhacks/deer.jpg',
@@ -127,6 +133,12 @@ const projects: Project[] = [
         alt: 'Main menu of Skippy the Swimmer',
         width: 1421,
         height: 794,
+      },
+      {
+        src: 'skippy/SkippyPlaying.png',
+        alt: 'Skippy playing with his brother Skimpy',
+        width: 2400,
+        height: 1350,
       },
       {
         src: 'skippy/TempRoom.png',
@@ -210,6 +222,7 @@ const projects: Project[] = [
     },
   },
   // open svg file with text editor and add preserveAspectRatio="none slice" to svg tag if adding as logo, otherwise it'll get squished on mobile
+  // make sure images aren't too big in size (around 200K) use https://tiny-img.com/image-compressor/
 ]
 
 export const projectHrefIcons: { [key in ProjectHrefTypes]: (props: SvgProps) => JSX.Element } = {

@@ -15,6 +15,7 @@ type Props = {
 
 // hanatodo switch pics with keyboard arrow buttons
 // hanatodo do something about to atrocious image loading performance :D
+// hantodo style photos like the buttons with shadow?
 
 // https://react-photo-album.com/documentation
 
@@ -33,8 +34,16 @@ const ImageGallery = (props: Props) => {
         photos={images}
         breakpoints={[300, 900]}
         onClick={(e) => setDisplayImage(e.index)}
-        componentsProps={{ image: { className: 'hover:scale-95' } }}
+        componentsProps={{
+          button: {
+            className: 'overflow-clip rounded-lg group',
+          },
+          image: {
+            className: 'group-hover:scale-110 ease-in-out duration-200',
+          },
+        }}
         defaultContainerWidth={300}
+        skeleton={<div style={{ width: '100%', minWidth: '100%', minHeight: '100%' }} />}
       />
       {-1 < displayImage && (
         <>
@@ -44,10 +53,10 @@ const ImageGallery = (props: Props) => {
             onClick={() => setDisplayImage(-1)}
           >
             <button
-              className="absolute top-4 right-4 w-12 h-12 bg-beige bg-opacity-90 rounded-full flex items-center justify-center p-4"
+              className="absolute top-4 right-4 w-12 h-12 bg-mainDark backdrop-blur-md bg-opacity-50 rounded-full flex items-center justify-center p-4"
               onClick={() => setDisplayImage(-1)}
             >
-              <div className="w-full h-full text-mainDark">
+              <div className="w-full h-full text-beige">
                 <CloseIcon />
               </div>
             </button>
@@ -62,7 +71,7 @@ const ImageGallery = (props: Props) => {
             />
             {images[displayImage].description && (
               <div
-                className="absolute sm:relative w-[calc(100%-2rem)] sm:w-auto bottom-8 sm:-bottom-2 rounded-md p-2 text-mainDark bg-beige z-50 bg-opacity-90"
+                className="absolute w-[calc(100%-2rem)] right-1/2 translate-x-1/2 sm:w-auto bottom-8 rounded-full p-2 px-4 text-beige bg-mainDark backdrop-blur-md z-50 bg-opacity-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <p className="text-center text-xl">{images[displayImage].description}</p>
