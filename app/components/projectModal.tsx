@@ -15,7 +15,6 @@ type Props = {
 // hanatodo add previous/next at bottom of modal?
 // hanatodo press esc to close modal
 // hanatodo modal open/close animation
-// hanatodo fix modal scrolling to middle of content after images load
 
 // Need to wrap with <Suspense> when using searchParams or will get error when trying to deploy
 
@@ -39,7 +38,7 @@ const ProjectModal = (props: Props) => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-full sm:w-max sm:max-w-[85%] sm:max-h-[85%] p-2 bg-beige rounded-2xl">
           <div
             className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full h-full px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 
-            items-center text-center overflow-y-auto customScrollbar content-center`}
+            items-center text-center overflow-y-auto customScrollbar ${!hasImages && 'content-center'}`}
           >
             <div
               className={`flex flex-col lg:flex-row rounded-xl min-h-fit ${hasImages && 'lg:h-full'} gap-12 items-start text-center justify-center`}
