@@ -2,13 +2,10 @@ import { Mali } from 'next/font/google'
 
 import Button from '@/app/components/button'
 import FloatingProjectIcon from '@/app/components/floatingProjectIcon'
-import IconButton from '@/app/components/iconButton'
 import GachaIcon from '@/app/components/icons/gacha'
-import GithubIcon from '@/app/components/icons/github'
-import LinkedInIcon from '@/app/components/icons/linkedIn'
-import MailIcon from '@/app/components/icons/mail'
 import MyFace from '@/app/components/myFace'
 import Polaroid from '@/app/components/polaroid'
+import SocialButtons from '@/app/components/socialButtons'
 import projects, { shuffle } from '@/app/projects/projects'
 
 const mali = Mali({
@@ -90,7 +87,7 @@ export default function Home() {
           className="bg-background-dark rounded-2xl p-8 lg:mx-24 flex flex-col lg:flex-row"
         >
           <div
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 py-4"
             // hanatodo lg:w-3/5 after adding random fact section
           >
             <h1 key={0} className="text-4xl md:text-6xl text-beige">
@@ -111,21 +108,7 @@ export default function Home() {
             </p>
             <br />
             <br />
-            <div className="flex flex-row gap-6 my-4 mt-auto">
-              <IconButton href="mailto:hanadowe@gmail.com" ariaLabel="My Email">
-                <MailIcon />
-              </IconButton>
-              <IconButton
-                href="https://www.linkedin.com/in/hanadowe/"
-                ariaLabel="My LinkedIn"
-                newTab
-              >
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton href="https://github.com/hana-dowe" ariaLabel="My GitHub" newTab>
-                <GithubIcon />
-              </IconButton>
-            </div>
+            <SocialButtons />
           </div>
 
           <div className="hidden lg:w-2/5 h-full flex-col items-center pt-8">

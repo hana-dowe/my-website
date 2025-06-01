@@ -1,11 +1,9 @@
 'use client'
 import { useState } from 'react'
 
-import GithubIcon from '@/app/components/icons/github'
 import HomeIcon from '@/app/components/icons/home'
-import LinkedInIcon from '@/app/components/icons/linkedIn'
-import MailIcon from '@/app/components/icons/mail'
 import MenuIcon from '@/app/components/icons/menu'
+import SocialButtons from '@/app/components/socialButtons'
 import { smoothScrollTo } from '@/app/utils/utils'
 
 const NavMenu = () => {
@@ -16,7 +14,7 @@ const NavMenu = () => {
   // hanatodo add 404 / error pages with button to go back to home page
 
   return (
-    <div className="flex justify-between absolute w-[calc(100%-8px)]">
+    <div className="flex justify-between absolute w-[calc(100%-8px)] ">
       <div className="pl-3 pt-3 w-fit">
         <a
           href=""
@@ -49,6 +47,7 @@ const NavMenu = () => {
             <button
               className={`group w-fit justify-self-end ${!navOpen && 'py-5 px-8'}`}
               onClick={() => setNavOpen(!navOpen)}
+              title="Menu"
             >
               <h2 className={'h-6 group-hover:scale-110 w-fit'}>
                 <MenuIcon />
@@ -67,23 +66,7 @@ const NavMenu = () => {
               </h2>
             </a>
           </div>
-          <div className={`${navOpen ? 'flex' : 'hidden'} flex-row gap-6`}>
-            <a href="mailto:hanadowe@gmail.com" className="group">
-              <h2 className="h-8 group-hover:scale-110">
-                <MailIcon />
-              </h2>
-            </a>
-            <a href="https://www.linkedin.com/in/hanadowe/" target="_blank" className="group">
-              <h2 className="h-8 group-hover:scale-110">
-                <LinkedInIcon />
-              </h2>
-            </a>
-            <a href="https://github.com/hana-dowe" target="_blank" className="group">
-              <h2 className="h-8 group-hover:scale-110">
-                <GithubIcon />
-              </h2>
-            </a>
-          </div>
+          <SocialButtons variant="simple" className={`${navOpen ? 'flex' : 'hidden'}`} />
         </div>
       </div>
       <div

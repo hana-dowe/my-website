@@ -2,21 +2,20 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
-import IconButton from '@/app/components/iconButton'
 import CloseIcon from '@/app/components/icons/close'
 import ImageGallery from '@/app/components/imageGallery'
-import { projectHrefIcons } from '@/app/projects/projects'
-import { Project, ProjectHrefTypes } from '@/app/types/types'
+import ProjectHrefIcons from '@/app/components/projectHrefIcons'
+import { Project } from '@/app/types/types'
 
 type Props = {
   project: Project
 }
 
-// hanatodo animate (to make up for slow load or figure out why it's kind of slow)
 // hanatodo scroll to where polaroid is on reload
 // hanatodo add previous/next at bottom of modal?
-// hanatodo make button big if only one?
-// hanatodo make component for action buttons?
+// hanatodo press esc to close modal
+// hanatodo modal open/close animation
+// hanatodo fix modal scrolling to middle of content after images load
 
 // Need to wrap with <Suspense> when using searchParams or will get error when trying to deploy
 
@@ -47,6 +46,7 @@ const ProjectModal = (props: Props) => {
             >
               <button
                 onClick={onClose}
+                title="Close"
                 aria-label="Close Project Modal"
                 className="group h-16 sm:h-14 absolute -top-2 -right-2 sm:-top-4 sm:-right-4 rounded-full p-2 bg-background-light"
               >
@@ -65,52 +65,14 @@ const ProjectModal = (props: Props) => {
                 </div>
                 <p className="text-lg max-w-lg">{project.summary}</p>
 
-                <div className="hidden lg:flex flex-row gap-8 justify-center pt-2">
-                  {Object.keys(project.hrefs).map((key, index) => {
-                    const subHrefType = key as ProjectHrefTypes
-                    if (!project.hrefs) return
-                    const Icon = projectHrefIcons[subHrefType]
-                    return (
-                      <IconButton
-                        key={index}
-                        href={project.hrefs[subHrefType]}
-                        ariaLabel={subHrefType}
-                        newTab
-                        secondary
-                      >
-                        <Icon />
-                      </IconButton>
-                    )
-                  })}
-                </div>
+                <ProjectHrefIcons projectHrefs={project.hrefs} className="hidden lg:flex" />
               </div>
               {hasImages && (
                 <div className="flex flex-row lg:w-7/12 gap-2 items-center m-auto">
                   <ImageGallery images={project.images ?? []} />
                 </div>
               )}
-              <div
-                className={`lg:hidden flex flex-col gap-4 items-center justify-center w-full ${hasImages && 'sm:h-full lg:w-5/12'}`}
-              >
-                <div className="flex flex-row gap-8 justify-center pt-2">
-                  {Object.keys(project.hrefs).map((key, index) => {
-                    const subHrefType = key as ProjectHrefTypes
-                    if (!project.hrefs) return
-                    const Icon = projectHrefIcons[subHrefType]
-                    return (
-                      <IconButton
-                        key={index}
-                        href={project.hrefs[subHrefType]}
-                        ariaLabel={subHrefType}
-                        newTab
-                        secondary
-                      >
-                        <Icon />
-                      </IconButton>
-                    )
-                  })}
-                </div>
-              </div>
+              <ProjectHrefIcons projectHrefs={project.hrefs} className="lg:hidden flex" />
             </div>
           </div>
         </div>

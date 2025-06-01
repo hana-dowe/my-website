@@ -14,7 +14,7 @@ export type Project = {
 
 export type ProjectHrefTypes = 'github' | 'youtube' | 'tumblr' | 'x' | 'pdf' | 'default'
 
-type ProjectHrefs = {
+export type ProjectHrefs = {
   [key in ProjectHrefTypes]?: string
 }
 

@@ -196,16 +196,27 @@ h2 {
   }
 
   .animatedUnderline {
-    background: linear-gradient(to right, theme('colors.highlight'), theme('colors.highlight'));
+    background: linear-gradient(theme('colors.highlight'));
     background-size: 0 0.2em;
     background-position: 0 85%;
     background-repeat: no-repeat;
     transition: background-position 400ms;
-    /* hanatodo or just 400ms (should change wavy thing to gradually change color if none) */
   }
   .animatedUnderline-active {
     background-size: calc(100% - 0.75ex) 0.4em;
     background-position: 110% 85%;
+  }
+
+  .animatedUnderlineIcon {
+    background: linear-gradient(theme('colors.highlight'));
+    background-size: 80% 0;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    transition: background-position 400ms;
+  }
+  .animatedUnderlineIcon-active {
+    background-size: 80% 25%;
+    background-position: 50% 85%;
   }
 
   .customScrollbar {
