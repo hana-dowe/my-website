@@ -152,7 +152,7 @@ const projects: Project[] = [
         alt: 'First iteration of Skippy the Swimmer',
         width: 779,
         height: 433,
-        description: 'One of the first iterations of the game',
+        description: 'Early iteration of the game',
       },
     ],
   },
@@ -234,7 +234,16 @@ export const projectHrefIcons: { [key in ProjectHrefTypes]: (props: SvgProps) =>
   pdf: PdfIcon,
 }
 
-// hantodo not using for now delete later if not needed
+export const projectHrefTitles: { [key in ProjectHrefTypes]: string } = {
+  default: 'View project',
+  github: 'Open GitHub',
+  youtube: 'Open YouTube',
+  tumblr: 'Open Tumblr',
+  x: 'Open X',
+  pdf: 'Open PDF',
+}
+
+// hanatodo not using for now delete later if not needed
 const projectsMap = new Map<string, Project>()
 projects.forEach((project) => {
   projectsMap.set(project.id, project)
