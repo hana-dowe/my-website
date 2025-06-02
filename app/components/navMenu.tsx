@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-import HomeIcon from '@/app/components/icons/home'
+import FaceIcon from '@/app/components/icons/face'
 import MenuIcon from '@/app/components/icons/menu'
 import SocialButtons from '@/app/components/socialButtons'
 import { smoothScrollTo } from '@/app/utils/utils'
@@ -23,7 +23,7 @@ const NavMenu = () => {
           }}
           className="text-beige group hidden sm:block"
         >
-          <HomeIcon className="group-hover:scale-110 h-8 box-content p-3" />
+          <FaceIcon className="group-hover:scale-110 h-9 box-content p-2" />
         </a>
       </div>
       <div className="rounded-bl-[24px] border-beige border-l-2 border-b-2 pb-2 pl-2 z-50">
@@ -41,7 +41,7 @@ const NavMenu = () => {
                 }}
                 className="group"
               >
-                <HomeIcon className="group-hover:scale-110 h-full box-content" />
+                <FaceIcon className="group-hover:scale-110 h-full box-content" />
               </a>
             </div>
             <button
