@@ -136,17 +136,25 @@ export default function Home() {
 
         <div
           id="projects"
-          className="flex w-full flex-col items-center gap-24 px-8 sm:px-24 md:px-8"
+          className="flex w-full flex-col items-center gap-24 py-8 px-8 sm:px-24 md:px-8"
         >
           <div
-            className={
-              `grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl ${projects.length % 2 == 0 && 'sm:-mb-64'}`
-              // hanatodo sizing works but covers stuff under it, and makes it not clickable if theres an even number of projects
-            }
+            className={`grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl ${projects.length % 2 == 0 && 'sm:-mb-64'}`}
           >
-            <h1 key={0} className="text-[5vw] text-beige text-center">
-              <span className={mali.className}>Projects</span>
-            </h1>
+            <div className="h-fit md:h-[calc(100%-16rem)] w-full lg:pl-8 content-center">
+              <div className="p-1 md:p-2 rounded-xl bg-beige h-full w-full md:w-fit md:h-fit justify-self-center">
+                <div className="border-2 border-dashed border-mainDark rounded-lg h-full w-full content-center p-4 md:px-8 lg:px-16 lg:py-16">
+                  <h1
+                    key={0}
+                    className="text-xl md:text-3xl lg:text-4xl text-mainDark text-center lg:mb-2"
+                  >
+                    <span className={mali.className}>Projects</span>
+                    <br className="hidden md:block" />
+                    <span className={mali.className}> & Works</span>
+                  </h1>
+                </div>
+              </div>
+            </div>
             {projects.map((project, i) => {
               return (
                 <Polaroid key={i + 1} project={project} variant={i % 2 == 0 ? 'right' : 'left'} />
