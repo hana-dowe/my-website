@@ -38,6 +38,7 @@ const FloatingProjectIcon = (props: Props) => {
         style={{ animationDelay: randomDelay }}
         src={logoSrc}
         alt={name + ' Logo'}
+        loading="eager"
         suppressHydrationWarning // it doesn't like that Math.random is different on server and client but its just decorative so ignore them
       />
     </a>

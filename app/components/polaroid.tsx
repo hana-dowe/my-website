@@ -33,6 +33,7 @@ const Polaroid = (props: Props) => {
                 className="bg-black w-full h-full object-cover group-hover:scale-105 transition-all duration-200"
                 src={project.polaroidSrc}
                 alt={project.polaroidAlt}
+                loading="eager"
               />
             </div>
             <div className="text-center mx-[calc(33.333%_-_2rem)] mt-4">

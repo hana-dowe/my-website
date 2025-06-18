@@ -220,7 +220,8 @@ h2 {
   }
 
   .customScrollbar {
-    /* scrollbar-color: theme('colors.beige') transparent; hanatodo */
+    /* hanatodo make scrollbar show on outside somehow?? beige gets hidden in modal */
+    /* scrollbar-color: theme('colors.beige') transparent; */
     scrollbar-width: none;
   }
 
@@ -241,7 +242,7 @@ h2 {
     }
 
     50% {
-      transform: translateY(-0.25rem);
+      transform: translateY(-0.5rem);
     }
 
     100% {
