@@ -96,10 +96,16 @@ export default function Home() {
             <br />
             <p>
               I'm a software developer based in Toronto with a passion for understanding how things
-              work and how people use technology. I completed a double major in Computer Science and
-              Communication, Culture, Information & Technology (CCIT) at the University of Toronto.
-              During my co-op placement at Alida, I gained professional experience contributing to
-              front-end and back-end development, and even some UX design.
+              work and how people use technology. I started my software development career in 2022
+              at Alida as a co-op student. Through collaborating with senior engineers, I gained
+              professional experience contributing to front-end and back-end development, and even
+              some UX design.
+            </p>
+            <p>
+              In 2024, I completed a double major in Computer Science and Communication, Culture,
+              Information & Technology (CCIT) at the University of Toronto. After graduating, I was
+              offered a full-time position at Alida, where I continued to take on more challenging
+              tasks and grow as a developer.
             </p>
             <p>
               I'm a big fan of Japanese music and have been working as a translator and proofreader

@@ -161,12 +161,12 @@ const projects: Project[] = [
     name: 'Alida',
     role: 'Software Development',
     summary:
-      'Co-op placement at the Touchpoint team in Alida, worked on a customer experience management platform that helps businesses collect and analyze customer feedback.',
+      'Co-op placement that eventually turned into a full-time position. Developed customer experience management platforms that help businesses collect and analyze customer feedback.',
     logoSrc: alidaLogo,
     polaroidSrc: alidaPolaroid,
     polaroidAlt: 'Alida Dashboard',
     hrefs: {
-      default: 'https://www.alida.com/touchpoint',
+      default: 'https://www.alida.com/',
     },
   },
   {
