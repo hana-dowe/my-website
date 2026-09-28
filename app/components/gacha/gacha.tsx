@@ -1,4 +1,6 @@
+import GachaResultButton from '@/app/components/gacha/gachaResultButton'
 import GachaIcon from '@/app/components/icons/gacha'
+import MailIcon from '@/app/components/icons/mail'
 
 const Gacha = () => {
   return (
@@ -34,8 +36,23 @@ const Gacha = () => {
           <GachaIcon className="text-background-dark" />
         </div>
         <div className="text-center">
-          <h3>New Random Fact</h3>
+          <h3>1/X</h3>
         </div>
+      </div>
+
+      <div className="grid  grid-cols-3 p-4 gap-4">
+        <GachaResultButton>
+          <MailIcon />
+        </GachaResultButton>
+        <GachaResultButton>
+          <MailIcon />
+        </GachaResultButton>
+        <GachaResultButton>icon</GachaResultButton>
+        <GachaResultButton disabled>icon</GachaResultButton>
+        <GachaResultButton>icon</GachaResultButton>
+        <GachaResultButton disabled>
+          <MailIcon />
+        </GachaResultButton>
       </div>
     </div>
   )
