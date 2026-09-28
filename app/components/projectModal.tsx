@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import CloseIcon from '@/app/components/icons/close'
 import ImageGallery from '@/app/components/imageGallery'
@@ -14,7 +15,6 @@ type Props = {
 // hanatodo scroll to where polaroid is on reload
 // hanatodo add previous/next at bottom of modal?
 // hanatodo press esc to close modal
-// hanatodo modal open/close animation
 
 // Need to wrap with <Suspense> when using searchParams or will get error when trying to deploy
 
@@ -26,6 +26,26 @@ const ProjectModal = (props: Props) => {
 
   const open = searchParams.get('project') === project.id
 
+  // use this instead of open so we can wait for animations to play out
+  const [shouldRender, setShouldRender] = useState(open)
+  const [animationClass, setAnimationClass] = useState(open ? 'showModal' : '')
+
+  useEffect(() => {
+    if (open) {
+      setShouldRender(true)
+      setAnimationClass('showModal')
+    } else if (shouldRender) {
+      setAnimationClass('hideModal')
+
+      const timer = setTimeout(() => {
+        setShouldRender(false)
+        setAnimationClass('')
+      }, 250) // same duration as animation
+
+      return () => clearTimeout(timer)
+    }
+  }, [open, shouldRender])
+
   const onClose = () => {
     router.push('/', { scroll: false })
   }
@@ -33,9 +53,14 @@ const ProjectModal = (props: Props) => {
   const hasImages = project.images && project.images.length > 0
 
   return (
-    open && (
-      <div className="absolute m-2 top-0 left-0 z-50 text-mainDark w-[calc(100%-1rem)] h-[calc(100dvh-1rem)]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-full sm:w-max sm:max-w-[85%] sm:max-h-[85%] p-2 bg-beige rounded-2xl">
+    shouldRender && (
+      <div
+        className={`absolute m-2 top-0 left-0 z-50 text-mainDark w-[calc(100%-1rem)] h-[calc(100dvh-1rem)] backdrop-blur-sm ${animationClass === 'showModal' ? 'fadeIn' : 'fadeOut'}`}
+      >
+        <div
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animationClass} z-50 
+          w-full h-full sm:max-w-[85%] sm:max-h-[85%] ${hasImages ? 'sm:w-[85vw]' : 'sm:w-max'} p-2 bg-beige rounded-2xl`}
+        >
           <div
             className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full h-full px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 
             items-center text-center overflow-y-auto customScrollbar ${!hasImages && 'content-center'}`}
