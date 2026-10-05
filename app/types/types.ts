@@ -26,6 +26,12 @@ export type ProjectImage = {
   description?: string
 }
 
+export type GachaResult = {
+  title: string
+  icon: React.ReactNode
+  summary: string
+}
+
 export type SvgProps = {
   className?: React.ComponentProps<'svg'>['className']
 }

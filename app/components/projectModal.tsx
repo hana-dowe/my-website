@@ -31,7 +31,7 @@ const ProjectModal = (props: Props) => {
   const hasImages = project.images && project.images.length > 0
 
   return (
-    <Modal open={open} onClose={onClose} fullWidth={hasImages}>
+    <Modal open={open} onClose={onClose} fullHeight fullWidth={hasImages}>
       <div
         className={`flex flex-col gap-4 sm:gap-8 items-center justify-center lg:sticky lg:top-0 lg:z-20 w-full ${hasImages && 'sm:h-full lg:w-5/12'}`}
       >

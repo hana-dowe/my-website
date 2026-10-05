@@ -8,13 +8,14 @@ type Props = {
   open: boolean
   onClose: () => void
   fullWidth?: boolean
+  fullHeight?: boolean
   children: React.ReactNode
 }
 
 // hanatodo press esc to close modal
 
 const Modal = (props: Props) => {
-  const { open, onClose, fullWidth = false, children } = props
+  const { open, onClose, fullWidth = false, fullHeight = false, children } = props
 
   // use this instead of open so we can wait for animations to play out
   const [shouldRender, setShouldRender] = useState(open)
@@ -44,10 +45,10 @@ const Modal = (props: Props) => {
       >
         <div
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animationClass} z-50 
-          w-full h-full sm:max-w-[85%] sm:max-h-[85%] ${fullWidth ? 'sm:w-[85vw]' : 'sm:w-max'} p-2 bg-beige rounded-2xl`}
+          w-full ${fullHeight && 'h-full'} sm:max-w-[85%] sm:max-h-[85%] ${fullWidth ? 'sm:w-[85vw]' : 'sm:w-max'} p-2 bg-beige rounded-2xl`}
         >
           <div
-            className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full h-full px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 
+            className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full ${fullHeight && 'h-full'} px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 
             items-center text-center overflow-y-auto customScrollbar ${!fullWidth && 'content-center'}`}
           >
             <div
