@@ -3,16 +3,15 @@
 import { Suspense, useState } from 'react'
 
 import GachaResultModal from '@/app/components/gacha/gachaResultModal'
-import GithubIcon from '@/app/components/icons/github'
+import { GachaResult } from '@/app/types/types'
 
 type Props = {
-  children: React.ReactNode
-  icon?: React.ReactNode
+  gachaResult: GachaResult
   disabled?: boolean
 }
 
 const GachaResultButton = (props: Props) => {
-  const { children, icon, disabled = false } = props
+  const { gachaResult, disabled = false } = props
 
   const [open, setOpen] = useState(false)
 
@@ -34,21 +33,12 @@ const GachaResultButton = (props: Props) => {
           <div
             className={`w-full h-full rounded-sm content-center justify-items-center px-4 group-hover:bg-beige group-hover:text-background-dark group-hover:border-background-dark`}
           >
-            {children}
+            {gachaResult.icon}
           </div>
-          {icon}
         </div>
       </button>
       <Suspense>
-        <GachaResultModal
-          open={open}
-          onClose={onClose}
-          gachaResult={{
-            title: 'a title',
-            icon: <GithubIcon />,
-            summary: 'summary but a little bit longer so that I can see what this will look like ',
-          }}
-        />
+        <GachaResultModal open={open} onClose={onClose} gachaResult={gachaResult} />
       </Suspense>
     </>
   )
