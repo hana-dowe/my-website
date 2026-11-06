@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 
 import CloseIcon from '@/app/components/icons/close'
 
+export const ModalAnimationDuration = 250 // 0.25s
+
 type Props = {
   open: boolean
   onClose: () => void
@@ -31,7 +33,7 @@ const Modal = (props: Props) => {
       const timer = setTimeout(() => {
         setShouldRender(false)
         setAnimationClass('')
-      }, 250) // same duration as animation
+      }, ModalAnimationDuration) // same duration as animation
 
       return () => clearTimeout(timer)
     }

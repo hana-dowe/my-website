@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 import GachaResultModal from '@/app/components/gacha/gachaResultModal'
 import { GachaResult } from '@/app/types/types'
@@ -8,16 +8,21 @@ import { GachaResult } from '@/app/types/types'
 type Props = {
   gachaResult: GachaResult
   disabled?: boolean
+  forceOpen?: boolean
 }
 
 const GachaResultButton = (props: Props) => {
-  const { gachaResult, disabled = false } = props
+  const { gachaResult, disabled = false, forceOpen = false } = props
 
   const [open, setOpen] = useState(false)
 
   const onClose = () => {
     setOpen(false)
   }
+
+  useEffect(() => {
+    setOpen(forceOpen)
+  }, [forceOpen])
 
   return (
     <>
