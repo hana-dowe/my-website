@@ -22,6 +22,7 @@ const GachaResultButton = (props: Props) => {
   return (
     <>
       <button
+        title={gachaResult.title}
         disabled={disabled}
         className={`group w-full ${disabled && 'pointer-events-none'}`}
         onClick={() => setOpen(true)}

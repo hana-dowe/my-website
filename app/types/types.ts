@@ -29,7 +29,7 @@ export type ProjectImage = {
 export type GachaResult = {
   title: string
   icon: React.ReactNode
-  summary: string
+  summary: React.ReactNode
 }
 
 export type SvgProps = {

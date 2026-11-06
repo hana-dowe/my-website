@@ -44,8 +44,8 @@ const Modal = (props: Props) => {
         className={`absolute m-2 top-0 left-0 z-50 text-mainDark w-[calc(100%-1rem)] h-[calc(100dvh-1rem)] backdrop-blur-sm ${animationClass === 'showModal' ? 'fadeIn' : 'fadeOut'}`}
       >
         <div
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animationClass} z-50 
-          w-full ${fullHeight && 'h-full'} sm:max-w-[85%] sm:max-h-[85%] ${fullWidth ? 'sm:w-[85vw]' : 'sm:w-max'} p-2 bg-beige rounded-2xl`}
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${animationClass} z-50 flex
+          w-full h-full ${!fullHeight && 'sm:h-auto'} sm:max-w-[85%] sm:max-h-[85%] ${fullWidth ? 'sm:w-[85vw]' : 'sm:w-max'} p-2 bg-beige rounded-2xl`}
         >
           <div
             className={`border-2 border-dashed border-mainDark rounded-xl max-h-full max-w-full w-full ${fullHeight && 'h-full'} px-8 py-16 sm:px-16 sm:py-24 md:px-24 md:py-32 

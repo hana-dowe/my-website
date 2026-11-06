@@ -305,6 +305,17 @@ h2 {
     animation: hideModal 0.25s ease-in-out forwards;
   }
 
+  .gachaResultContent {
+    @apply text-lg max-w-lg flex flex-col gap-2;
+    a {
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
   .tape {
     background-color: hsla(0, 0%, 100%, 0.2);
     box-shadow: inset 0 0 1em 0.5em hsla(0, 0%, 100%, 0.1);

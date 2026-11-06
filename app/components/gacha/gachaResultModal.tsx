@@ -22,7 +22,7 @@ const GachaResultModal = (props: Props) => {
           {/* <h1 className="text-4xl font-medium">{gachaResult.title}</h1> */}
           <h1 className="text-lg uppercase">{gachaResult.title}</h1>
         </div>
-        <p className="text-lg max-w-lg">{gachaResult.summary}</p>
+        <div className="gachaResultContent">{gachaResult.summary}</div>
       </div>
     </Modal>
   )
