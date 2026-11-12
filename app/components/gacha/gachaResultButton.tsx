@@ -33,11 +33,11 @@ const GachaResultButton = (props: Props) => {
         onClick={() => setOpen(true)}
       >
         <div
-          className={`rounded-md w-full h-16 p-1 bg-background-dark border-2 group-hover:translate-y-1 group-hover:shadow-[0rem_0.1rem]
+          className={`rounded-md w-full h-16 p-1 bg-background-dark border-2 group-hover:translate-y-1 group-hover:shadow-[0rem_0.1rem] content-center
           ${disabled ? 'text-background border-background translate-y-1' : 'text-beige border-beige shadow-beige border-solid border-2 shadow-[0rem_0.25rem]'}`}
         >
           <div
-            className={`w-full h-full rounded-sm content-center justify-items-center px-4 group-hover:bg-beige group-hover:text-background-dark group-hover:border-background-dark`}
+            className={`w-full h-full rounded-sm content-center justify-items-center px-4 py-1 sm:py-0 group-hover:bg-beige group-hover:text-background-dark group-hover:border-background-dark`}
           >
             {gachaResult.icon}
           </div>

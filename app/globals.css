@@ -305,6 +305,48 @@ h2 {
     animation: hideModal 0.25s ease-in-out forwards;
   }
 
+  /* based on: https://21st.dev/@muhammad-binsalman/components/rainbow-borders-button */
+  .rainbow-border::before,
+  .rainbow-border::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    background: linear-gradient(
+      45deg,
+      theme('colors.lightblue') 0%,
+      theme('colors.orange') 30%,
+      theme('colors.blue') 50%,
+      theme('colors.pink') 65%,
+      theme('colors.lightblue') 100%
+    );
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    animation: rainbow 20s linear infinite;
+    @apply rounded-lg;
+  }
+  :hover.rainbow-border::after {
+    filter: blur(4px);
+  }
+  @keyframes rainbow {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  :disabled.rainbow-border::before,
+  :disabled.rainbow-border::after {
+    animation: none;
+    filter: none;
+    opacity: 25%;
+  }
+
   .gachaResultContent {
     @apply text-lg max-w-lg flex flex-col gap-2;
     a {

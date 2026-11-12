@@ -82,23 +82,20 @@ export default function Home() {
           <FloatingProjectIcon {...shuffledProjects[4]} location="bottom-even" />
         </div>
 
-        <div
-          id="about"
-          className="bg-background-dark rounded-2xl p-8 lg:mx-24 flex flex-col lg:flex-row"
-        >
-          <div className="flex flex-col gap-4 py-4">
-            <h1 key={0} className="text-4xl md:text-6xl text-beige">
+        <div id="about" className="bg-background-dark text-beige rounded-2xl p-8 lg:mx-24">
+          <div className="flex flex-col gap-8 py-4 max-w-6xl items-center text-center ">
+            <h1 key={0} className="text-4xl md:text-7xl">
               <span className={mali.className}>Hi I'm Hana!</span>
             </h1>
-            <br />
-            <p>
+            <h2 className="text-xl md:text-3xl">
               I'm a software developer based in Toronto with a passion for understanding how things
               work and how people use technology.
-            </p>
-            <br />
+            </h2>
+            <h3 className="text-xl md:text-2xl">
+              Try the gacha machine below ⬇ to learn more about me!
+            </h3>
             <Gacha />
-            <br />
-            <SocialButtons />
+            <SocialButtons className="gap-10" />
           </div>
         </div>
 

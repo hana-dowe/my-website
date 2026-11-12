@@ -7,6 +7,13 @@ import { gachaResults } from '@/app/components/gacha/gachaResults'
 import GachaIcon from '@/app/components/icons/gacha'
 import { ModalAnimationDuration } from '@/app/components/modal'
 
+// hanatodo hopefully add rolling animation on gacha machine eventually
+// hanatodo color balls same as button rainbow?
+// hanatodo help button that has I hate gambling button
+// hanatodo new tab button on links in results
+// hantodo completion bar
+// hanatodo disable roll button css -> all done in rainbow or something maybe?
+
 const Gacha = () => {
   const [remainingCapsules, setRemainingCapsules] = useState([
     ...Array(gachaResults.length).keys(),
@@ -31,15 +38,28 @@ const Gacha = () => {
 
   return (
     <div className="flex flex-col md:flex-row w-full">
-      <div className="w-full md:w-1/2 flex flex-col m-auto items-center">
+      <div className="w-full md:w-1/2 flex flex-col m-auto items-center gap-4">
         <button onClick={unlockAll} disabled={remainingCapsules.length == 0}>
           ?
         </button>
-        <div className="max-w-48 p-4 mx-auto w-full">
+        <div className="max-w-52 p-4 mx-auto w-full">
           <GachaIcon className="text-beige" />
         </div>
-        <button onClick={handleRollGacha} disabled={remainingCapsules.length == 0}>
-          Roll
+        <button
+          onClick={handleRollGacha}
+          disabled={remainingCapsules.length == 0}
+          className="group w-1/2 relative rainbow-border"
+        >
+          <div
+            className={`rounded-md w-full h-16 group-hover:p-1 flex flex-row justify-between font-bold items-center text-center
+          text-lg text-background-dark relative z-10 group-disabled:text-background group-disabled:p-0`}
+          >
+            <div
+              className={`w-full h-full rounded-md content-center px-4 bg-beige group-disabled:bg-background-dark`}
+            >
+              Roll
+            </div>
+          </div>
         </button>
       </div>
 
