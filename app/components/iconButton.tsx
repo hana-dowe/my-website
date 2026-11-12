@@ -9,7 +9,8 @@ type Props = {
   newTab?: boolean
 }
 
-// hantodo am i sure secondary shouldn't get filled in
+// hanatodo am i sure secondary shouldn't get filled in
+// hanatodo hover state background needs to know parent color (wrong color on dark background)
 
 const IconButton = (props: Props) => {
   const { children, href, title, ariaLabel, variant = 'primary', newTab } = props
