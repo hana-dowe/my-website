@@ -31,17 +31,17 @@ const Gacha = () => {
     }, ModalAnimationDuration)
   }
 
-  const unlockAll = () => {
-    setRemainingCapsules([])
-    setNewResult(NaN)
-  }
+  // const unlockAll = () => {
+  //   setRemainingCapsules([])
+  //   setNewResult(NaN)
+  // }
 
   return (
     <div className="flex flex-col md:flex-row w-full">
       <div className="w-full md:w-1/2 flex flex-col m-auto items-center gap-4">
-        <button onClick={unlockAll} disabled={remainingCapsules.length == 0}>
+        {/* <button onClick={unlockAll} disabled={remainingCapsules.length == 0}>
           ?
-        </button>
+        </button> */}
         <div className="max-w-52 p-4 mx-auto w-full">
           <GachaIcon className="text-beige" />
         </div>
